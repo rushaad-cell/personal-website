@@ -32,7 +32,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-white dark:bg-black pt-16">
+    <section className="min-h-screen flex items-center justify-center relative bg-black pt-16">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
@@ -43,7 +43,8 @@ export function Hero() {
         >
           {/* Name */}
           <motion.h1
-            className="text-5xl md:text-7xl font-black mb-8 text-black dark:text-white leading-none tracking-tight"
+            className="text-5xl md:text-7xl font-black mb-8 text-white leading-none tracking-tighter"
+            style={{ letterSpacing: '-0.03em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -61,7 +62,7 @@ export function Hero() {
             exit={{ opacity: 0, y: -10 }}
             className="mb-16 h-8 flex items-center justify-center"
           >
-            <p className="text-lg md:text-xl text-black/50 dark:text-white/50 uppercase tracking-widest font-light">
+            <p className="text-base md:text-lg text-white/60 uppercase tracking-[0.2em] font-light">
               {statements[currentStatement]}
             </p>
           </motion.div>
@@ -73,12 +74,12 @@ export function Hero() {
             transition={{ delay: 0.6 }}
             className="mb-32"
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-widest text-black/40 dark:text-white/40 font-light">
-              <span>Cognitive Science</span>
-              <span className="text-black/20 dark:text-white/20">×</span>
-              <span>Data Science</span>
-              <span className="text-black/20 dark:text-white/20">×</span>
-              <span>Statistics</span>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-[0.15em] text-white/50 font-light">
+              <span>COGNITIVE SCIENCE</span>
+              <span className="text-white/30">×</span>
+              <span>DATA SCIENCE</span>
+              <span className="text-white/30">×</span>
+              <span>STATISTICS</span>
             </div>
           </motion.div>
 
@@ -93,7 +94,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium text-sm uppercase tracking-widest border-2 border-black dark:border-white hover:bg-transparent hover:text-black dark:hover:text-white transition-all"
+                className="px-8 py-4 bg-white text-black font-black text-xs uppercase tracking-[0.15em] border-2 border-white hover:bg-transparent hover:text-white transition-all"
               >
                 Explore
                 <ArrowRight className="w-4 h-4 inline-block ml-2" />
@@ -103,7 +104,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-medium text-sm uppercase tracking-widest hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
+                className="px-8 py-4 border-2 border-white text-white font-black text-xs uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all"
               >
                 Projects
               </motion.button>

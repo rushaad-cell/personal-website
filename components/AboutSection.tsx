@@ -15,7 +15,7 @@ export function AboutSection() {
   const [hoveredTrait, setHoveredTrait] = useState<number | null>(null);
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -26,12 +26,12 @@ export function AboutSection() {
           className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
               ABOUT
             </h1>
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
-          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             Cognitive Science × Data Science × Product Strategy
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ export function AboutSection() {
             <div className="relative group">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white overflow-hidden relative"
+                className="aspect-square bg-white border-2 border-white overflow-hidden relative"
               >
                 <Image
                   src="/profile-photo.jpg"
@@ -70,8 +70,8 @@ export function AboutSection() {
             className="md:col-span-3 space-y-12"
           >
             <div className="space-y-6">
-              <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
-                Cognitive Science student at UC Berkeley, double-minoring in <span className="font-medium">Data Science</span> & <span className="font-medium">Statistics</span>, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
+              <p className="text-base text-white/80 leading-relaxed font-light">
+                Cognitive Science student at UC Berkeley, double-minoring in <span className="font-medium text-white">Data Science</span> & <span className="font-medium text-white">Statistics</span>, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
               </p>
             </div>
           </motion.div>

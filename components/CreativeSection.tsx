@@ -41,23 +41,23 @@ export function CreativeSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Minimal Header */}
+        {/* Edgy Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-20"
+          className="mb-16"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-black leading-none tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
               CREATIVE
             </h1>
-            <div className="flex-1 h-px bg-black/10"></div>
+            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
-          <p className="text-sm text-black/40 uppercase tracking-widest font-light">
-            Media & Editorial Work
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
+            MEDIA & EDITORIAL WORK
           </p>
         </motion.div>
 
@@ -69,21 +69,21 @@ export function CreativeSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
-              style={{ marginBottom: index === creativeWork.length - 1 ? '0' : '14rem' }}
+              className="border-l-2 border-white pl-8 mb-16 last:mb-0"
             >
               <div>
-                <div className="flex items-baseline gap-4 mb-6 flex-wrap">
-                  <h2 className="text-3xl md:text-4xl font-black text-black">
+                <div className="flex items-baseline gap-4 mb-4 flex-wrap">
+                  <h2 className="text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.02em' }}>
                     {work.org}
                   </h2>
-                  <span className="text-xs text-black/40 uppercase tracking-widest">
+                  <span className="text-xs text-white/40 uppercase tracking-[0.15em] font-light">
                     {work.period}
                   </span>
                 </div>
-                <p className="text-sm text-black/50 uppercase tracking-widest mb-6 font-light">
+                <p className="text-xs text-white/60 uppercase tracking-[0.15em] mb-6 font-light">
                   {work.role}
                 </p>
-                <p className="text-lg text-black/70 leading-relaxed font-light max-w-3xl mb-6">
+                <p className="text-base text-white/80 leading-relaxed font-light max-w-3xl mb-6">
                   {work.description}
                 </p>
                 {work.website && (
@@ -91,7 +91,7 @@ export function CreativeSection() {
                     href={`https://${work.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mb-6 text-black hover:opacity-60 transition-opacity text-sm uppercase tracking-widest font-light"
+                    className="inline-flex items-center gap-2 mb-6 text-white hover:text-white/70 transition-colors text-xs uppercase tracking-[0.15em] font-light"
                   >
                     {work.website}
                     <ExternalLink className="w-3 h-3" />
@@ -99,17 +99,17 @@ export function CreativeSection() {
                 )}
                 
                 {/* Links */}
-                <div className="flex flex-wrap gap-6 mt-6">
+                <div className="flex flex-wrap gap-4 mt-8">
                   {work.embeds.map((embed, i) => (
                     <motion.a
                       key={i}
                       href={embed.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ x: 4 }}
+                      whileHover={{ x: 2, y: -2 }}
                       onHoverStart={() => setHoveredItem(`${work.org}-${i}`)}
                       onHoverEnd={() => setHoveredItem(null)}
-                      className="px-6 py-3 border border-black/20 hover:border-black transition-colors text-sm uppercase tracking-widest text-black font-light"
+                      className="px-6 py-2.5 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all text-xs uppercase tracking-[0.15em] text-white font-medium"
                     >
                       {embed.label}
                     </motion.a>

@@ -29,20 +29,20 @@ export function ProjectsSection() {
     <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Minimal Header */}
+        {/* Edgy Header */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-20"
+          className="mb-16"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
               PROJECTS
             </h1>
-            <div className="flex-1 h-px bg-white/20"></div>
+            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
-          <p className="text-sm text-white/40 uppercase tracking-widest font-light">
-            Research & Development
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
+            RESEARCH & DEVELOPMENT
           </p>
         </motion.div>
 
@@ -56,19 +56,18 @@ export function ProjectsSection() {
               transition={{ delay: index * 0.15 }}
               onHoverStart={() => setHoveredProject(index)}
               onHoverEnd={() => setHoveredProject(null)}
-              className="grid md:grid-cols-12 gap-16"
-              style={{ marginBottom: index === projects.length - 1 ? '0' : '12rem', paddingBottom: index === projects.length - 1 ? '0' : '12rem', borderBottom: index === projects.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.1)' }}
+              className="grid md:grid-cols-12 gap-12 border-l-2 border-white pl-8 mb-16 last:mb-0 last:border-0"
             >
               {/* Left: Content (7 cols) */}
-              <div className="md:col-span-7 space-y-8">
+              <div className="md:col-span-7 space-y-6">
                 <div>
-                  <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight" style={{ letterSpacing: '-0.02em' }}>
                     {project.title}
                   </h2>
-                  <p className="text-xl text-white/70 font-light mb-4">
+                  <p className="text-base text-white/80 font-light mb-4">
                     {project.description}
                   </p>
-                  <p className="text-lg text-white/60 leading-relaxed font-light">
+                  <p className="text-sm text-white/70 leading-relaxed font-light">
                     {project.details}
                   </p>
                 </div>
@@ -81,8 +80,8 @@ export function ProjectsSection() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.15 + i * 0.05 }}
-                      whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-white/10 text-white text-xs font-medium uppercase tracking-widest border border-white/20"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="px-3 py-1.5 bg-white text-black text-xs font-black uppercase tracking-[0.1em] border-2 border-white"
                     >
                       {tech}
                     </motion.span>
@@ -94,11 +93,11 @@ export function ProjectsSection() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ x: 4 }}
-                    className="inline-flex items-center gap-2 text-white font-medium text-sm uppercase tracking-widest hover:opacity-60 transition-opacity"
+                    whileHover={{ x: 2, y: -2 }}
+                    className="inline-flex items-center gap-2 text-white font-medium text-xs uppercase tracking-[0.15em] hover:text-white/70 transition-colors border-2 border-white px-4 py-2 hover:bg-white hover:text-black"
                   >
-                    View Project
-                    <ArrowUpRight className="w-4 h-4" />
+                    VIEW PROJECT
+                    <ArrowUpRight className="w-3 h-3" />
                   </motion.a>
                 )}
               </div>
@@ -109,7 +108,7 @@ export function ProjectsSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 {index === 0 ? (
-                  <div className="aspect-square border border-white/20 relative overflow-hidden">
+                  <div className="aspect-square border-2 border-white relative overflow-hidden">
                     <iframe
                       src="https://camentalhealthaccess.com/"
                       className="w-full h-full border-0"
@@ -118,7 +117,7 @@ export function ProjectsSection() {
                     />
                   </div>
                 ) : project.image ? (
-                  <div className="aspect-square border border-white/20 relative overflow-hidden group">
+                  <div className="aspect-square border-2 border-white relative overflow-hidden group">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -127,21 +126,21 @@ export function ProjectsSection() {
                       unoptimized
                     />
                     <motion.div
-                      className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-20 transition-opacity"
+                      className="absolute inset-0 border-4 border-white opacity-0 group-hover:opacity-30 transition-opacity"
                     />
                   </div>
                 ) : (
-                  <div className="aspect-square border border-white/20 flex items-center justify-center relative overflow-hidden group">
+                  <div className="aspect-square border-2 border-white flex items-center justify-center relative overflow-hidden group">
                     <div className="text-center p-8">
-                      <p className="text-xs text-white/30 uppercase tracking-widest mb-2">
-                        Project Preview
+                      <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-2 font-light">
+                        PROJECT PREVIEW
                       </p>
-                      <p className="text-sm text-white/50 font-light">
+                      <p className="text-sm text-white/70 font-light">
                         Add screenshot or visualization here
                       </p>
                     </div>
                     <motion.div
-                      className="absolute inset-0 border-2 border-white opacity-0 group-hover:opacity-20 transition-opacity"
+                      className="absolute inset-0 border-4 border-white opacity-0 group-hover:opacity-30 transition-opacity"
                     />
                   </div>
                 )}

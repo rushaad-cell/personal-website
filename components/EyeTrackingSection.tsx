@@ -33,7 +33,7 @@ export function EyeTrackingSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -43,13 +43,13 @@ export function EyeTrackingSection() {
           className="mb-20 text-center"
         >
           <div className="flex items-baseline justify-center gap-6 mb-4">
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+            <div className="flex-1 h-0.5 bg-white"></div>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
               EYE-TRACKING
             </h1>
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
-          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             Research & Computational Modeling
           </p>
         </motion.div>
@@ -61,8 +61,8 @@ export function EyeTrackingSection() {
             animate={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <div className="border-2 border-black dark:border-white p-4">
-              <div className="relative w-full aspect-video bg-white dark:bg-black">
+            <div className="border-2 border-white p-4">
+              <div className="relative w-full aspect-video bg-white">
                 <Image
                   src="/eye-tracking.jpg"
                   alt="Eye-tracking visualization"
@@ -82,15 +82,15 @@ export function EyeTrackingSection() {
           >
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-8 border border-black/20 dark:border-white/20"
+              className="p-6 border-2 border-white"
             >
-              <div className="flex items-start gap-6 mb-6">
-                <Brain className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />
+              <div className="flex items-start gap-6 mb-4">
+                <Brain className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-black text-black dark:text-white mb-4 text-lg uppercase tracking-tight">
-                    Computational Modeling
+                  <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em]">
+                    COMPUTATIONAL MODELING
                   </h3>
-                  <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
+                  <p className="text-white/80 leading-relaxed font-light text-sm">
                     Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy. Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
                   </p>
                 </div>
@@ -99,15 +99,15 @@ export function EyeTrackingSection() {
 
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-8 border border-black/20 dark:border-white/20"
+              className="p-6 border-2 border-white"
             >
               <div className="flex items-start gap-6">
-                <TrendingUp className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />
+                <TrendingUp className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-black text-black dark:text-white mb-4 text-lg uppercase tracking-tight">
-                    Learning Outcomes
+                  <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em]">
+                    LEARNING OUTCOMES
                   </h3>
-                  <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
+                  <p className="text-white/80 leading-relaxed font-light text-sm">
                     Identifying visual features that improve learning efficacy through data-driven analysis. Processing and analyzing data with Python & R to guide learning media design decisions.
                   </p>
                 </div>
@@ -122,13 +122,13 @@ export function EyeTrackingSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-32 pt-24 border-t border-black/20 dark:border-white/20"
+          className="mt-24 pt-16 border-t-2 border-white"
         >
           <div className="mb-12 text-center">
-            <h3 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-3 leading-none tracking-tight">
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-none tracking-tighter" style={{ letterSpacing: '-0.02em' }}>
               PAPERS I REALLY LIKE
             </h3>
-            <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+            <p className="text-xs text-white/50 uppercase tracking-[0.15em] font-light">
               Key Research & Insights
             </p>
           </div>
@@ -144,23 +144,23 @@ export function EyeTrackingSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="p-6 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all block group"
+                className="p-6 border-2 border-white hover:bg-white hover:text-black transition-all block group"
               >
                 <div className="mb-3">
-                  <span className="text-xs font-medium text-black/60 dark:text-white/60 uppercase tracking-widest">
+                  <span className="text-xs font-medium text-white/60 uppercase tracking-[0.1em]">
                     {paper.year}
                   </span>
                 </div>
-                <h4 className="font-black text-black dark:text-white mb-2 text-lg leading-tight group-hover:underline">
+                <h4 className="font-black text-white mb-2 text-base leading-tight group-hover:text-black group-hover:underline">
                   {paper.title}
                 </h4>
-                <p className="text-xs text-black/60 dark:text-white/60 mb-3 uppercase tracking-widest font-light">
+                <p className="text-xs text-white/60 mb-3 uppercase tracking-[0.1em] font-light">
                   {paper.authors}
                 </p>
-                <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed font-light">
+                <p className="text-sm text-white/80 leading-relaxed font-light">
                   {paper.description}
                 </p>
-                <div className="mt-3 flex items-center gap-2 text-xs text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white transition-colors">
+                <div className="mt-3 flex items-center gap-2 text-xs text-white/50 group-hover:text-black transition-colors">
                   <ExternalLink className="w-3 h-3" />
                   <span>Read Paper</span>
                 </div>

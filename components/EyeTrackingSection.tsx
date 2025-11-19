@@ -130,42 +130,44 @@ export function EyeTrackingSection() {
           </motion.div>
         </div>
 
-        {/* Papers Section */}
+        {/* Papers Section - Moved to Bottom */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.5 }}
+          className="mt-32 pt-24 border-t border-black/20 dark:border-white/20"
         >
-          <div className="flex items-center gap-4 mb-12">
-            <BookOpen className="w-5 h-5 text-black dark:text-white" />
-            <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white uppercase tracking-tight">
-              Papers I Really Like
-            </h2>
+          <div className="mb-12 text-center">
+            <h3 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-3 leading-none tracking-tight">
+              PAPERS I REALLY LIKE
+            </h3>
+            <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+              Key Research & Insights
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {papers.map((paper, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + i * 0.1 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                onHoverStart={() => setHoveredPaper(i)}
-                onHoverEnd={() => setHoveredPaper(null)}
-                className="p-6 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all bg-white dark:bg-black relative"
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                whileHover={{ y: -4 }}
+                className="p-6 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-xs text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+                <div className="mb-3">
+                  <span className="text-xs font-medium text-black/60 dark:text-white/60 uppercase tracking-widest">
                     {paper.year}
                   </span>
                 </div>
-                <h4 className="font-black text-black dark:text-white mb-2 text-sm uppercase tracking-tight leading-tight">
+                <h4 className="font-black text-black dark:text-white mb-2 text-lg leading-tight">
                   {paper.title}
                 </h4>
-                <p className="text-xs text-black/50 dark:text-white/50 font-light mb-3">
+                <p className="text-xs text-black/60 dark:text-white/60 mb-3 uppercase tracking-widest font-light">
                   {paper.authors}
                 </p>
-                <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed font-light">
+                <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed font-light">
                   {paper.description}
                 </p>
               </motion.div>

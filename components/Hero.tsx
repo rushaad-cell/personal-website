@@ -43,7 +43,7 @@ export function Hero() {
         >
           {/* Name */}
           <motion.h1
-            className="text-8xl md:text-[12rem] font-black mb-12 text-black dark:text-white leading-none tracking-tight"
+            className="text-5xl md:text-7xl font-black mb-8 text-black dark:text-white leading-none tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -78,7 +78,7 @@ export function Hero() {
               <span className="text-black/20 dark:text-white/20">×</span>
               <span>Data Science</span>
               <span className="text-black/20 dark:text-white/20">×</span>
-              <span>Product Strategy</span>
+              <span>Statistics</span>
             </div>
           </motion.div>
 

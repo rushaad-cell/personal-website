@@ -136,6 +136,24 @@ export function ExperienceSection() {
                   <p className="text-white/60 dark:text-black/60 leading-relaxed text-lg font-light max-w-3xl">
                     {exp.description}
                   </p>
+                  {exp.org === "Memory Laboratory, UC Santa Cruz" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                      className="mt-8"
+                    >
+                      <div className="relative w-full max-w-2xl aspect-[4/3] border-2 border-white/20 dark:border-black/20 overflow-hidden">
+                        <Image
+                          src="/research-poster.jpg"
+                          alt="Research Poster: Today was epic"
+                          fill
+                          className="object-contain"
+                          unoptimized
+                        />
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </motion.div>
             ))}

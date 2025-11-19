@@ -58,11 +58,8 @@ export function EyeTrackingSection() {
             animate={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              className="bg-black dark:bg-white border-2 border-black/20 dark:border-white/20 relative overflow-hidden"
-            >
-              <div className="relative w-full aspect-video">
+            <div className="border-2 border-black dark:border-white p-4">
+              <div className="relative w-full aspect-video bg-white dark:bg-black">
                 <Image
                   src="/eye-tracking.jpg"
                   alt="Eye-tracking visualization"
@@ -71,15 +68,7 @@ export function EyeTrackingSection() {
                   unoptimized
                 />
               </div>
-              <div className="p-4 bg-black dark:bg-white text-center">
-                <p className="font-black text-white dark:text-black mb-1 text-xs uppercase tracking-widest">
-                  Eye-Tracking Data Visualization
-                </p>
-                <p className="text-xs text-white/50 dark:text-black/50 font-light">
-                  Gaze path, fixations, and heatmap
-                </p>
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Details */}

@@ -32,10 +32,10 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative"
+          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto"
         >
-          <div className="flex items-start gap-12 mb-12">
-            <div className="flex-1">
+          <div className="mb-12">
+            <div>
               <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
                 B.A in Cognitive Science
               </h2>

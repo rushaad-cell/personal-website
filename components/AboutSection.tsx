@@ -83,40 +83,6 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* Traits Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
-        >
-          {traits.map((trait, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + i * 0.05 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              onHoverStart={() => setHoveredTrait(i)}
-              onHoverEnd={() => setHoveredTrait(null)}
-              className="relative p-8 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all cursor-pointer"
-            >
-              <h3 className="font-black text-black dark:text-white mb-3 text-base uppercase tracking-widest">
-                {trait.label}
-              </h3>
-              <p className="text-sm text-black/50 dark:text-white/50 font-light">
-                {trait.desc}
-              </p>
-              {hoveredTrait === i && (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="absolute top-2 right-2 w-2 h-2 bg-black dark:bg-white"
-                />
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Education Pills */}
         <motion.div

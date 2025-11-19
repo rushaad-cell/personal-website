@@ -81,7 +81,7 @@ export function SkillsSection() {
             >
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="space-y-8"
+                className="space-y-8 border-2 border-white p-8"
               >
                 {/* Category Header */}
                 <div>

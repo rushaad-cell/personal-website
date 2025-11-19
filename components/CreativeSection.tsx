@@ -71,7 +71,7 @@ export function CreativeSection() {
               transition={{ delay: index * 0.15 }}
               className="mb-16 last:mb-0"
             >
-              <div>
+              <div className="border-2 border-white p-8">
                 <div className="mb-2">
                   <span className="text-white/50 font-mono text-sm">{'>'}</span>
                 </div>

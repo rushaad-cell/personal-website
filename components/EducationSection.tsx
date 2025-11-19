@@ -31,7 +31,7 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-black p-12 md:p-16 relative w-full"
+          className="bg-black border-2 border-white p-12 md:p-16 relative w-full"
         >
           <div className="mb-12 text-center">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{ fontFamily: 'var(--font-geist-mono)' }}>
@@ -115,7 +115,7 @@ export function EducationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.05 }}
-                  className="p-4 bg-black text-center"
+                  className="p-4 border-2 border-white bg-black text-center"
                   style={{ width: '100%', maxWidth: '20rem', margin: '0 auto' }}
                 >
                   <div className="mb-2">

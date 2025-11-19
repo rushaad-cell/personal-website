@@ -94,7 +94,7 @@ export function ExperienceSection() {
               transition={{ delay: index * 0.1 }}
               onHoverStart={() => setSelectedExp(index)}
               onHoverEnd={() => setSelectedExp(null)}
-              className="group"
+              className="group border-2 border-white p-6"
             >
               <div className="mb-2">
                 <span className="text-white/50 font-mono text-sm">{'>'}</span>
@@ -136,7 +136,7 @@ export function ExperienceSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 pt-12"
+          className="mt-16 pt-12 border-2 border-white p-8"
         >
           <div className="mb-12">
             <div className="mb-3">

@@ -81,7 +81,7 @@ export function EyeTrackingSection() {
           >
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6"
+              className="p-6 border-2 border-white"
             >
               <div className="mb-2">
                 <span className="text-white/50 font-mono text-sm">{'>'}</span>
@@ -98,7 +98,7 @@ export function EyeTrackingSection() {
 
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6"
+              className="p-6 border-2 border-white"
             >
               <div className="mb-2">
                 <span className="text-white/50 font-mono text-sm">{'>'}</span>
@@ -143,7 +143,7 @@ export function EyeTrackingSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="p-6 hover:bg-white hover:text-black transition-all block group"
+                className="p-6 border-2 border-white hover:bg-white hover:text-black transition-all block group"
               >
                 <div className="mb-3">
                   <span className="text-xs font-medium text-white/60 uppercase tracking-[0.1em]">

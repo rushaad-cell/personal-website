@@ -54,7 +54,7 @@ export function EyeTrackingSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid md:grid-cols-2 gap-16 items-start mb-32">
           {/* Interactive Visualization - Embed */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -78,16 +78,16 @@ export function EyeTrackingSection() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="space-y-8"
+            className="space-y-12"
           >
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 border border-black/20 dark:border-white/20"
+              className="p-8 border border-black/20 dark:border-white/20"
             >
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-6 mb-6">
                 <Brain className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-black text-black dark:text-white mb-2 text-lg uppercase tracking-tight">
+                  <h3 className="font-black text-black dark:text-white mb-4 text-lg uppercase tracking-tight">
                     Computational Modeling
                   </h3>
                   <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
@@ -99,12 +99,12 @@ export function EyeTrackingSection() {
 
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 border border-black/20 dark:border-white/20"
+              className="p-8 border border-black/20 dark:border-white/20"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-6">
                 <TrendingUp className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-black text-black dark:text-white mb-2 text-lg uppercase tracking-tight">
+                  <h3 className="font-black text-black dark:text-white mb-4 text-lg uppercase tracking-tight">
                     Learning Outcomes
                   </h3>
                   <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
@@ -114,8 +114,8 @@ export function EyeTrackingSection() {
               </div>
             </motion.div>
 
-            <div className="pt-6 border-t border-black/10 dark:border-white/10">
-              <div className="flex flex-wrap gap-2">
+            <div className="pt-8 border-t border-black/10 dark:border-white/10">
+              <div className="flex flex-wrap gap-4">
                 {["Python", "R", "Eyelink", "PsychoPy"].map((tool, i) => (
                   <motion.span
                     key={tool}

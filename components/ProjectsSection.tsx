@@ -47,7 +47,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="space-y-32">
+        <div className="space-y-48">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -56,7 +56,7 @@ export function ProjectsSection() {
               transition={{ delay: index * 0.15 }}
               onHoverStart={() => setHoveredProject(index)}
               onHoverEnd={() => setHoveredProject(null)}
-              className="grid md:grid-cols-12 gap-12"
+              className="grid md:grid-cols-12 gap-16"
             >
               {/* Left: Content (7 cols) */}
               <div className="md:col-span-7 space-y-8">

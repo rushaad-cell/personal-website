@@ -67,37 +67,15 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="md:col-span-3 space-y-8"
+            className="md:col-span-3 space-y-12"
           >
-            <div>
+            <div className="space-y-6">
               <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
                 Cognitive Science student at UC Berkeley, double-minoring in <span className="font-medium">Data Science</span> & <span className="font-medium">Statistics</span>, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
               </p>
             </div>
           </motion.div>
         </div>
-
-
-        {/* Education Pills */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="flex flex-wrap gap-3 justify-center border-t border-black/10 dark:border-white/10 pt-12"
-        >
-          {["UC Berkeley", "Cognitive Science", "Data Science", "Statistics"].map((item, i) => (
-            <motion.span
-              key={item}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.1 + i * 0.05, type: "spring" }}
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest"
-            >
-              {item}
-            </motion.span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

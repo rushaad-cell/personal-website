@@ -92,7 +92,7 @@ export function EducationSection() {
             <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6 text-center">
               Relevant Coursework
             </h3>
-            <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto justify-items-center">
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto justify-items-center items-center">
               {[
                 { code: "MATH 55", title: "Discrete Mathematics" },
                 { code: "STAT 133", title: "Concepts in Computing with Data" },

@@ -42,12 +42,11 @@ export function EyeTrackingSection() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-20 text-center"
         >
-          <div className="flex items-baseline justify-center gap-6 mb-4">
-            <div className="flex-1 h-0.5 bg-white"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
+          <div className="mb-4 text-center">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2" style={{ letterSpacing: '-0.05em', fontFamily: 'var(--font-geist-mono)' }}>
               EYE-TRACKING
             </h1>
-            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
           <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             Research & Computational Modeling
@@ -122,7 +121,7 @@ export function EyeTrackingSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-24 pt-16 border-t-2 border-white"
+          className="mt-16 pt-12"
         >
           <div className="mb-12 text-center">
             <h3 className="text-3xl md:text-4xl font-black text-white mb-3 leading-none tracking-tighter" style={{ letterSpacing: '-0.02em' }}>

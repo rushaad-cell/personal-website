@@ -62,7 +62,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -71,14 +71,13 @@ export function ContactSection() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-20 text-center"
         >
-          <div className="flex items-baseline justify-center gap-6 mb-4">
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+          <div className="mb-4 text-center">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2 font-mono" style={{ letterSpacing: '-0.05em' }}>
               CONTACT
             </h1>
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
           </div>
-          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light font-mono">
             Get In Touch
           </p>
         </motion.div>
@@ -102,15 +101,16 @@ export function ContactSection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ x: 4 }}
-                  className="block p-6 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all group"
+                  className="block p-6 bg-black border-2 border-white hover:bg-white hover:text-black transition-all group font-mono"
                 >
                   <div className="flex items-center gap-4">
-                    <Icon className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-black dark:group-hover:text-white transition-colors" />
+                    <span className="text-white/50 group-hover:text-black transition-colors font-mono">></span>
+                    <Icon className="w-5 h-5 text-white group-hover:text-black transition-colors" />
                     <div className="flex-1">
-                      <div className="font-medium text-black dark:text-white mb-1 text-sm uppercase tracking-widest">
+                      <div className="font-black text-white group-hover:text-black mb-1 text-xs uppercase tracking-[0.15em]">
                         {method.label}
                       </div>
-                      <div className="text-sm text-black/50 dark:text-white/50 font-light">
+                      <div className="text-sm text-white/80 group-hover:text-black/80 font-light font-mono">
                         {method.value}
                       </div>
                     </div>

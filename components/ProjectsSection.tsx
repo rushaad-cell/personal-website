@@ -35,11 +35,11 @@ export function ProjectsSection() {
           animate={{ opacity: 1, x: 0 }}
           className="mb-16"
         >
-          <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
+          <div className="mb-4">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2" style={{ letterSpacing: '-0.05em', fontFamily: 'var(--font-geist-mono)' }}>
               PROJECTS
             </h1>
-            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
           <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             RESEARCH & DEVELOPMENT
@@ -56,7 +56,7 @@ export function ProjectsSection() {
               transition={{ delay: index * 0.15 }}
               onHoverStart={() => setHoveredProject(index)}
               onHoverEnd={() => setHoveredProject(null)}
-              className="grid md:grid-cols-12 gap-12 border-l-2 border-white pl-8 mb-16 last:mb-0 last:border-0"
+              className="grid md:grid-cols-12 gap-12 mb-16 last:mb-0"
             >
               {/* Left: Content (7 cols) */}
               <div className="md:col-span-7 space-y-6">

@@ -26,10 +26,10 @@ export function AboutSection() {
           className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2" style={{ letterSpacing: '-0.05em', fontFamily: 'var(--font-geist-mono)' }}>
               ABOUT
             </h1>
-            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
           <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             Cognitive Science × Data Science × Product Strategy
@@ -54,7 +54,7 @@ export function AboutSection() {
                   src="/profile-photo.jpg"
                   alt="Rushaad Mistry"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-90"
                   priority
                   unoptimized
                 />

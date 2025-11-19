@@ -43,7 +43,7 @@ export function Hero() {
         >
           {/* Name */}
           <motion.h1
-            className="text-5xl md:text-7xl font-black mb-8 text-white leading-none tracking-tighter"
+            className="text-5xl md:text-7xl font-black mb-8 text-white leading-none tracking-tighter font-mono"
             style={{ letterSpacing: '-0.03em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export function Hero() {
             exit={{ opacity: 0, y: -10 }}
             className="mb-16 h-8 flex items-center justify-center"
           >
-            <p className="text-base md:text-lg text-white/60 uppercase tracking-[0.2em] font-light">
+            <p className="text-base md:text-lg text-white/60 uppercase tracking-[0.2em] font-light font-mono">
               {statements[currentStatement]}
             </p>
           </motion.div>
@@ -74,10 +74,10 @@ export function Hero() {
             transition={{ delay: 0.6 }}
             className="mb-32"
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-[0.15em] text-white/50 font-light">
-              <span>COGNITIVE SCIENCE</span>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-[0.15em] text-white/50 font-light font-mono">
+              <span>COGNITIVE_SCIENCE</span>
               <span className="text-white/30">×</span>
-              <span>DATA SCIENCE</span>
+              <span>DATA_SCIENCE</span>
               <span className="text-white/30">×</span>
               <span>STATISTICS</span>
             </div>

@@ -50,11 +50,11 @@ export function CreativeSection() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter" style={{ letterSpacing: '-0.05em' }}>
+          <div className="mb-4">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2" style={{ letterSpacing: '-0.05em', fontFamily: 'var(--font-geist-mono)' }}>
               CREATIVE
             </h1>
-            <div className="flex-1 h-0.5 bg-white"></div>
           </div>
           <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light">
             MEDIA & EDITORIAL WORK
@@ -69,7 +69,7 @@ export function CreativeSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
-              className="border-l-2 border-white pl-8 mb-16 last:mb-0"
+              className="mb-16 last:mb-0"
             >
               <div>
                 <div className="flex items-baseline gap-4 mb-4 flex-wrap">

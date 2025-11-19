@@ -47,7 +47,7 @@ export function SkillsSection() {
   };
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -56,14 +56,13 @@ export function SkillsSection() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-20 text-center"
         >
-          <div className="flex items-baseline justify-center gap-6 mb-4">
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+          <div className="mb-4 text-center">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2 font-mono" style={{ letterSpacing: '-0.05em' }}>
               SKILLS
             </h1>
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
           </div>
-          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light font-mono">
             Research & Technical Tools
           </p>
         </motion.div>
@@ -86,10 +85,12 @@ export function SkillsSection() {
               >
                 {/* Category Header */}
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-black text-black dark:text-white mb-2 uppercase tracking-tight">
-                    {category === "research" ? "Research & PM" : "Tools & Data"}
-                  </h2>
-                  <div className="w-16 h-px bg-black dark:bg-white"></div>
+                  <div className="mb-2">
+                    <span className="text-white/50 font-mono text-sm">></span>
+                    <h2 className="text-2xl md:text-3xl font-black text-white mb-2 uppercase tracking-tight inline-block ml-2 font-mono">
+                      {category === "research" ? "Research & PM" : "Tools & Data"}
+                    </h2>
+                  </div>
                 </div>
 
                 {/* Skills List */}
@@ -108,7 +109,7 @@ export function SkillsSection() {
                         scale: 1.05,
                         y: -2,
                       }}
-                      className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest cursor-default border-2 border-black dark:border-white"
+                      className="px-4 py-2 bg-white text-black text-xs font-black uppercase tracking-widest cursor-default border-2 border-white font-mono"
                     >
                       {skill}
                     </motion.span>

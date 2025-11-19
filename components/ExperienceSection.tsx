@@ -64,7 +64,7 @@ export function ExperienceSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -73,72 +73,61 @@ export function ExperienceSection() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-20"
         >
-          <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight">
+          <div className="mb-4">
+            <span className="text-white/50 font-mono text-sm">$</span>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter inline-block ml-2" style={{ letterSpacing: '-0.05em', fontFamily: 'var(--font-geist-mono)' }}>
               EXPERIENCE
             </h1>
-            <div className="flex-1 h-px bg-white/20 dark:bg-black/20"></div>
           </div>
-          <p className="text-sm text-white/40 dark:text-black/40 uppercase tracking-widest font-light">
+          <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-light font-mono">
             Research & Management
           </p>
         </motion.div>
 
-        {/* Minimal Timeline */}
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-white/10 dark:bg-black/10" />
+        {/* Terminal Timeline */}
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+              onHoverStart={() => setSelectedExp(index)}
+              onHoverEnd={() => setSelectedExp(null)}
+              className="group"
+            >
+              <div className="mb-2">
+                <span className="text-white/50 font-mono text-sm">></span>
 
-          <div className="space-y-20">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                onHoverStart={() => setSelectedExp(index)}
-                onHoverEnd={() => setSelectedExp(null)}
-                className="relative pl-12 group"
-              >
-                {/* Timeline Dot */}
-                <motion.div
-                  className="absolute left-0 top-2 w-3 h-3 rounded-full bg-white dark:bg-black border-2 border-white dark:border-black z-10"
-                  whileHover={{ scale: 1.5 }}
-                  animate={{
-                    scale: selectedExp === index ? 1.3 : 1,
-                  }}
-                />
-
-                {/* Content */}
-                <div className="space-y-4">
-                  <div className="flex items-baseline justify-between gap-6 flex-wrap">
-                    <div>
-                      <h3 className="text-3xl md:text-4xl font-black text-white dark:text-black mb-2 leading-tight">
-                        {exp.title}
-                      </h3>
-                      <p className="text-lg text-white/70 dark:text-black/70 font-light">
-                        {exp.org}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-4 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-3 h-3" />
-                        <span>{exp.period}</span>
-                      </div>
+              {/* Content */}
+              <div className="space-y-3 ml-4">
+                <div className="flex items-baseline justify-between gap-6 flex-wrap">
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 leading-tight font-mono">
+                      {exp.title}
+                    </h3>
+                    <p className="text-base text-white/80 font-light font-mono">
+                      {exp.org}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 text-white/60 text-xs uppercase tracking-widest font-mono">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-3 h-3" />
+                      <span>{exp.period}</span>
                     </div>
                   </div>
-                  
-                  <p className="text-sm text-white/50 dark:text-black/50 uppercase tracking-widest">
-                    {exp.location}
-                  </p>
-
-                  <p className="text-white/60 dark:text-black/60 leading-relaxed text-lg font-light max-w-3xl">
-                    {exp.description}
-                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                
+                <p className="text-xs text-white/60 uppercase tracking-widest font-mono">
+                  {exp.location}
+                </p>
+
+                <p className="text-white/80 leading-relaxed text-sm font-light max-w-3xl font-mono">
+                  {exp.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Presentations Section */}
@@ -146,13 +135,16 @@ export function ExperienceSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-24 pt-24 border-t border-white/10 dark:border-black/10"
+          className="mt-16 pt-12"
         >
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-black text-white dark:text-black leading-none tracking-tight mb-3">
-              PRESENTATIONS
-            </h2>
-            <p className="text-sm text-white/40 dark:text-black/40 uppercase tracking-widest font-light">
+            <div className="mb-3">
+              <span className="text-white/50 font-mono text-sm">$</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-none tracking-tighter inline-block ml-2 font-mono" style={{ letterSpacing: '-0.02em' }}>
+                PRESENTATIONS
+              </h2>
+            </div>
+            <p className="text-xs text-white/50 uppercase tracking-[0.15em] font-light font-mono">
               Research Contributions
             </p>
           </div>
@@ -167,13 +159,13 @@ export function ExperienceSection() {
                 className="space-y-6"
               >
                 <div className="space-y-3">
-                  <p className="text-sm text-white/50 dark:text-black/50 font-light">
+                  <p className="text-sm text-white/70 font-light font-mono">
                     {pres.authors}
                   </p>
-                  <h3 className="text-xl md:text-2xl font-black text-white dark:text-black leading-tight">
+                  <h3 className="text-lg md:text-xl font-black text-white leading-tight font-mono">
                     {pres.title}
                   </h3>
-                  <div className="flex flex-wrap items-center gap-3 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
+                  <div className="flex flex-wrap items-center gap-3 text-white/60 text-xs uppercase tracking-widest font-mono">
                     <span>{pres.type}</span>
                     <span>•</span>
                     <span>{pres.venue}</span>
@@ -190,7 +182,7 @@ export function ExperienceSection() {
                   whileHover={{ scale: 1.02 }}
                   className="mt-6 inline-block"
                 >
-                  <button className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white border-2 border-white/20 dark:border-black/20 hover:border-white dark:hover:border-black transition-all text-sm uppercase tracking-widest font-medium">
+                  <button className="px-8 py-4 bg-white text-black border-2 border-white hover:bg-black hover:text-white transition-all text-xs uppercase tracking-[0.15em] font-black font-mono">
                     Click here to see poster
                     <ExternalLink className="w-4 h-4 inline-block ml-2" />
                   </button>

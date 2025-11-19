@@ -72,15 +72,15 @@ export function ExperienceSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-32"
+          className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight pl-0 md:pl-0">
+            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight">
               EXPERIENCE
             </h1>
             <div className="flex-1 h-px bg-white/20 dark:bg-black/20"></div>
@@ -95,7 +95,7 @@ export function ExperienceSection() {
           {/* Vertical Line */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-white/10 dark:bg-black/10" />
 
-          <div className="space-y-24">
+          <div className="space-y-20">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -104,7 +104,7 @@ export function ExperienceSection() {
                 transition={{ delay: index * 0.1 }}
                 onHoverStart={() => setSelectedExp(index)}
                 onHoverEnd={() => setSelectedExp(null)}
-                className="relative pl-16 group"
+                className="relative pl-12 group"
               >
                 {/* Timeline Dot */}
                 <motion.div
@@ -152,7 +152,7 @@ export function ExperienceSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-32 pt-32 border-t border-white/10 dark:border-black/10"
+          className="mt-24 pt-24 border-t border-white/10 dark:border-black/10"
         >
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-white dark:text-black leading-none tracking-tight mb-3">

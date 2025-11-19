@@ -32,15 +32,15 @@ export function ProjectsSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-32"
+          className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight pl-0 md:pl-0">
+            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight">
               PROJECTS
             </h1>
             <div className="flex-1 h-px bg-white/20 dark:bg-black/20"></div>
@@ -51,7 +51,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="space-y-32">
+        <div className="space-y-24">
           {projects.map((project, index) => (
             <motion.div
               key={index}

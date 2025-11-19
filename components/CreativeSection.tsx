@@ -50,15 +50,15 @@ export function CreativeSection() {
         }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 md:pl-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-24"
+          className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight pl-0 md:pl-0">
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
               CREATIVE
             </h1>
             <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
@@ -69,7 +69,7 @@ export function CreativeSection() {
         </motion.div>
 
         {/* Creative Work Grid */}
-        <div className="space-y-24">
+        <div className="space-y-20">
           {creativeWork.map((work, index) => (
             <motion.div
               key={work.org}

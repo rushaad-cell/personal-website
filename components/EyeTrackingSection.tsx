@@ -37,16 +37,16 @@ export function EyeTrackingSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-24 text-center"
+          className="mb-20 text-center"
         >
           <div className="flex items-baseline justify-center gap-6 mb-4">
             <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight pl-0 md:pl-0">
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
               EYE-TRACKING
             </h1>
             <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
@@ -56,7 +56,7 @@ export function EyeTrackingSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-32">
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
           {/* Interactive Visualization - Embed */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

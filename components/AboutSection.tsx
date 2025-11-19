@@ -22,16 +22,16 @@ export function AboutSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-20"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight pl-0 md:pl-0">
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
               ABOUT
             </h1>
             <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
@@ -42,7 +42,7 @@ export function AboutSection() {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-5 gap-12 mb-24">
+        <div className="grid md:grid-cols-5 gap-12 mb-20">
           {/* Photo Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -92,7 +92,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
         >
           {traits.map((trait, i) => (
             <motion.div

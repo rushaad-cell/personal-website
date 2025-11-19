@@ -13,12 +13,12 @@ export function EducationSection() {
         }} />
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-24 text-center"
+          className="mb-20 text-center"
         >
           <div className="flex items-baseline justify-center gap-6 mb-4">
             <div className="flex-1 h-px bg-white/10 dark:bg-black/10"></div>

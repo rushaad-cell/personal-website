@@ -1,12 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { GraduationCap, Award } from "lucide-react";
 
 export function EducationSection() {
-  const t = useTranslations("education");
-
   return (
     <section id="education" className="py-24 bg-black dark:bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +17,7 @@ export function EducationSection() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <GraduationCap className="w-8 h-8 text-white dark:text-black" />
             <h2 className="text-4xl md:text-5xl font-bold text-white dark:text-black">
-              {t("title")}
+              Education
             </h2>
           </div>
         </motion.div>
@@ -39,16 +36,16 @@ export function EducationSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-white dark:text-black mb-2">
-                  {t("degree")}
+                  B.A in Cognitive Science. Minors in Data Science and Statistics
                 </h3>
                 <p className="text-lg text-white/80 dark:text-black/80 font-medium mb-1">
-                  {t("university")}
+                  University of California, Berkeley
                 </p>
                 <p className="text-white/60 dark:text-black/60 mb-4">
-                  {t("location")} • {t("period")}
+                  Berkeley, CA • 2023-2027
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {[t("major"), t("minor1"), t("minor2")].map((item, i) => (
+                  {["Cognitive Science", "Data Science", "Statistics"].map((item, i) => (
                     <motion.span
                       key={i}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -72,7 +69,7 @@ export function EducationSection() {
                 </h4>
               </div>
               <p className="text-white/70 dark:text-black/70 leading-relaxed">
-                {t("specialization")}
+                Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
               </p>
             </div>
           </div>
@@ -81,4 +78,3 @@ export function EducationSection() {
     </section>
   );
 }
-

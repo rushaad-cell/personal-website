@@ -1,13 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Eye, Brain, TrendingUp, BookOpen, Download } from "lucide-react";
+import { Eye, Brain, TrendingUp, BookOpen } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
 export function EyeTrackingSection() {
-  const t = useTranslations("projects.eyeTracking");
   const svgRef = useRef<SVGSVGElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isAnimating, setIsAnimating] = useState(false);
@@ -160,11 +158,11 @@ export function EyeTrackingSection() {
           <div className="inline-flex items-center gap-2 mb-4">
             <Eye className="w-6 h-6 text-black dark:text-white" />
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
-              {t("title")}
+              Eye-Tracking Research
             </h2>
           </div>
           <p className="text-lg text-black/70 dark:text-white/70 max-w-3xl mx-auto">
-            {t("description")}
+            Researching children's visual attention patterns and learning outcomes in digital media contexts via eye-tracking and computational modeling.
           </p>
         </motion.div>
 
@@ -232,7 +230,7 @@ export function EyeTrackingSection() {
                     Computational Modeling
                   </h3>
                   <p className="text-black/70 dark:text-white/70">
-                    {t("details")}
+                    Processing and analyzing data with Python & R to identify visual features that improve learning efficacy. Collaborating with technical and research teams to interpret data and guide learning media design decisions.
                   </p>
                 </div>
               </div>

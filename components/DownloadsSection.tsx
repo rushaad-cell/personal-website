@@ -1,20 +1,17 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Download, FileText } from "lucide-react";
 
 export function DownloadsSection() {
-  const t = useTranslations("downloads");
-
   const resources = [
     {
-      title: t("resume"),
-      url: "/resume.pdf", // Placeholder - user will add actual file
+      title: "Download Resume",
+      url: "/resume.pdf",
       icon: FileText,
     },
     {
-      title: t("poster"),
+      title: "Research Poster",
       url: "https://drive.google.com/file/d/1oH3f7ROARCjpfzpnnlPvG7ROFHsV_lSB/view?usp=sharing",
       icon: FileText,
       external: true,
@@ -32,7 +29,7 @@ export function DownloadsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white dark:text-black mb-4">
-            {t("title")}
+            Resources
           </h2>
         </motion.div>
 
@@ -72,4 +69,3 @@ export function DownloadsSection() {
     </section>
   );
 }
-

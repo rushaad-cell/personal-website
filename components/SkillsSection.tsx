@@ -1,12 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Code, Database, BarChart3 } from "lucide-react";
+import { Code, BarChart3 } from "lucide-react";
 
 export function SkillsSection() {
-  const t = useTranslations("skills");
-
   const skills = {
     research: [
       "Experimental Design",
@@ -38,8 +35,6 @@ export function SkillsSection() {
     ],
   };
 
-  const icons = [Code, Database, BarChart3];
-
   return (
     <section id="skills" className="py-24 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,12 +46,11 @@ export function SkillsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-            {t("title")}
+            Technical Skills
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Research & PM */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +61,7 @@ export function SkillsSection() {
             <div className="flex items-center gap-3 mb-6">
               <BarChart3 className="w-6 h-6 text-black dark:text-white" />
               <h3 className="text-2xl font-bold text-black dark:text-white">
-                {t("research")}
+                Research & PM
               </h3>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -87,7 +81,6 @@ export function SkillsSection() {
             </div>
           </motion.div>
 
-          {/* Tools & Data */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +91,7 @@ export function SkillsSection() {
             <div className="flex items-center gap-3 mb-6">
               <Code className="w-6 h-6 text-black dark:text-white" />
               <h3 className="text-2xl font-bold text-black dark:text-white">
-                {t("tools")}
+                Tools & Data
               </h3>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -122,4 +115,3 @@ export function SkillsSection() {
     </section>
   );
 }
-

@@ -1,14 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Linkedin, Send } from "lucide-react";
-import { useLocale } from "next-intl";
 
 export function ContactSection() {
-  const t = useTranslations("contact");
-  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,12 +48,11 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-            {t("title")}
+            Get In Touch
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,7 +91,6 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.form
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -110,7 +104,7 @@ export function ContactSection() {
                 htmlFor="name"
                 className="block text-sm font-medium text-black dark:text-white mb-2"
               >
-                {t("name")}
+                Name
               </label>
               <input
                 type="text"
@@ -128,7 +122,7 @@ export function ContactSection() {
                 htmlFor="email"
                 className="block text-sm font-medium text-black dark:text-white mb-2"
               >
-                {t("email")}
+                Email
               </label>
               <input
                 type="email"
@@ -146,7 +140,7 @@ export function ContactSection() {
                 htmlFor="message"
                 className="block text-sm font-medium text-black dark:text-white mb-2"
               >
-                {t("message")}
+                Message
               </label>
               <textarea
                 id="message"
@@ -167,23 +161,23 @@ export function ContactSection() {
               {status === "sending" ? (
                 <>
                   <span className="animate-spin">⏳</span>
-                  {t("sending")}
+                  Sending...
                 </>
               ) : (
                 <>
                   <Send className="w-4 h-4" />
-                  {t("send")}
+                  Send Message
                 </>
               )}
             </button>
             {status === "success" && (
               <p className="text-sm text-green-600 dark:text-green-400">
-                {t("success")}
+                Message sent successfully!
               </p>
             )}
             {status === "error" && (
               <p className="text-sm text-red-600 dark:text-red-400">
-                {t("error")}
+                Failed to send message. Please try again.
               </p>
             )}
           </motion.form>
@@ -192,4 +186,3 @@ export function ContactSection() {
     </section>
   );
 }
-

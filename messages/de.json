@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "about": "Über Mich",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "education": "Bildung",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Rushaad Mistry",
+    "subtitle": "Kognitionswissenschaftler & Produktstratege",
+    "description": "Verbinden von Verhaltenswissenschaften und Produktdenken, um menschliche Daten in Erkenntnisse für Innovationen zu übersetzen."
+  },
+  "about": {
+    "title": "Über Mich",
+    "description": "Kognitionswissenschaftsstudent an der UC Berkeley mit Doppelminor in Data Science und Statistik, spezialisiert auf Produktforschung und datengestützte Strategie. Erfahren in Versuchsplanung, Datenanalyse und Projektmanagement in akademischen und technischen Umgebungen. Teil Datenanalyst, Teil Design-Denker und Teil 'lass es uns versuchen und sehen', ich arbeite daran, Verhaltenswissenschaften und Produktdenken zu verbinden, um menschliche Daten in Erkenntnisse für Innovationen zu übersetzen."
+  },
+  "projects": {
+    "title": "Projekte",
+    "eyeTracking": {
+      "title": "Eye-Tracking-Forschung",
+      "description": "Erforschung von visuellen Aufmerksamkeitsmustern und Lernergebnissen bei Kindern in digitalen Medienkontexten durch Eye-Tracking und computergestütztes Modellieren.",
+      "details": "Verarbeitung und Analyse von Daten mit Python und R, um visuelle Merkmale zu identifizieren, die die Lerneffizienz verbessern. Zusammenarbeit mit technischen und Forschungsteams, um Daten zu interpretieren und Entscheidungen zum Design von Lernmedien zu leiten."
+    },
+    "accessibility": {
+      "title": "Barrierefreiheits-Analyse und Dashboard",
+      "description": "Aufbau einer automatisierten Testpipeline (Selenium + axe-core) zur Bewertung von Landkreis-Websites auf WCAG-Konformität.",
+      "details": "Verwendung von ANOVA und t-Tests zur Identifizierung, wie visuelle Website-Komplexität mit Barrierefreiheitsproblemen korreliert. Entwicklung eines interaktiven React + D3.js Dashboards zur Visualisierung von Empfehlungen für inklusives Design.",
+      "link": "Dashboard ansehen"
+    },
+    "memory": {
+      "title": "Gedächtnislabor-Forschung",
+      "description": "Entwurf und Analyse von Experimenten zur Beeinflussung autobiografischer Gedächtnisverzerrung durch digitalen Informationsaustausch und Publikumsrahmen.",
+      "details": "Erstellung und Bereitstellung von Qualtrics-Studien; Durchführung von Sentiment- und Regressionsanalysen; Durchführung von Literaturrecherchen. Präsentation von Erkenntnissen als Erstautor auf der Western Psychological Association Conference (2023)."
+    }
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "kiddLab": {
+      "title": "Forschungsassistent",
+      "org": "Kidd Lab, UC Berkeley",
+      "location": "Berkeley, CA",
+      "period": "08/2025 - Gegenwart",
+      "description": "Erforschung von visuellen Aufmerksamkeitsmustern und Lernergebnissen bei Kindern in digitalen Medienkontexten durch Eye-Tracking und computergestütztes Modellieren. Verarbeitung und Analyse von Daten mit Python und R, um visuelle Merkmale zu identifizieren, die die Lerneffizienz verbessern. Zusammenarbeit mit technischen und Forschungsteams, um Daten zu interpretieren und Entscheidungen zum Design von Lernmedien zu leiten."
+    },
+    "bsm": {
+      "title": "Geschäftsführer",
+      "org": "Berkeley Student Media - Associated Students of the University of California",
+      "location": "Berkeley, CA",
+      "period": "06/2024 – Gegenwart",
+      "description": "Leitung der operativen Strategie für das studentenbetriebene Medienzentrum der UC Berkeley, das mehr als 1000 Benutzer pro Semester bedient. Analyse von Nutzungs- und Workflow-Daten (Excel und Tableau) zur Optimierung der Ressourcenallokation und Servicekapazität. Überwachung von Marketing-, Analyse- und Finanzteams zur Bereitstellung von 4-6 Community-Events pro Semester. Entwurf von Tracking-Systemen für Inventar, Incident-Reports und Personal, Verbesserung der Servicezuverlässigkeit."
+    },
+    "memoryLab": {
+      "title": "Forschungsassistent - Gedächtnislabor",
+      "org": "University of California, Santa Cruz. PIs: Dana-Lis Bittner, M.S.; Dr. Benjamin Storm",
+      "location": "Santa Cruz, CA",
+      "period": "06/2020 - 06/2023",
+      "description": "Entwurf und Analyse von Experimenten zur Beeinflussung autobiografischer Gedächtnisverzerrung durch digitalen Informationsaustausch und Publikumsrahmen. Erstellung und Bereitstellung von Qualtrics-Studien; Durchführung von Sentiment- und Regressionsanalysen; Durchführung von Literaturrecherchen. Präsentation von Erkenntnissen als Erstautor auf der Western Psychological Association Conference (2023)."
+    }
+  },
+  "education": {
+    "title": "Bildung",
+    "degree": "B.A in Kognitionswissenschaften. Minors in Data Science und Statistik",
+    "university": "University of California, Berkeley",
+    "location": "Berkeley, CA",
+    "period": "2023-2027",
+    "major": "Kognitionswissenschaften",
+    "minor1": "Data Science",
+    "minor2": "Statistik",
+    "specialization": "Spezialisiert auf Produktforschung und datengestützte Strategie. Erfahren in Versuchsplanung, Datenanalyse und Projektmanagement in akademischen und technischen Umgebungen."
+  },
+  "skills": {
+    "title": "Technische Fähigkeiten",
+    "research": "Forschung & PM",
+    "tools": "Tools & Daten"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie Mich",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht Senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+  },
+  "downloads": {
+    "title": "Ressourcen",
+    "resume": "Lebenslauf Herunterladen",
+    "poster": "Forschungsposter"
+  }
+}

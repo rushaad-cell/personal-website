@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Rushaad Mistry",
+    "subtitle": "Investigador en Ciencias Cognitivas y Estratega de Producto",
+    "description": "Conectando las ciencias del comportamiento y el pensamiento de producto para traducir datos humanos en insights para la innovación."
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Estudiante de Ciencias Cognitivas en UC Berkeley, con doble minor en Ciencia de Datos y Estadística, especializado en investigación de productos y estrategia basada en datos. Experiencia en diseño experimental, análisis de datos y gestión de proyectos en entornos académicos y técnicos. Parte analista de datos, parte pensador de diseño, y parte 'probémoslo y veamos', trabajo para conectar las ciencias del comportamiento y el pensamiento de producto para traducir datos humanos en insights para la innovación."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "eyeTracking": {
+      "title": "Investigación de Seguimiento Ocular",
+      "description": "Investigando patrones de atención visual y resultados de aprendizaje en contextos de medios digitales mediante seguimiento ocular y modelado computacional.",
+      "details": "Procesando y analizando datos con Python y R para identificar características visuales que mejoran la eficacia del aprendizaje. Colaborando con equipos técnicos y de investigación para interpretar datos y guiar decisiones de diseño de medios de aprendizaje."
+    },
+    "accessibility": {
+      "title": "Análisis de Accesibilidad y Panel",
+      "description": "Construir pipeline de pruebas automatizadas (Selenium + axe-core) para evaluar sitios web del condado para cumplimiento WCAG.",
+      "details": "Usé ANOVA y pruebas t para identificar cómo la complejidad visual del sitio web se correlaciona con problemas de accesibilidad. Desarrollé un panel interactivo React + D3.js visualizando recomendaciones para diseño inclusivo.",
+      "link": "Ver Panel"
+    },
+    "memory": {
+      "title": "Investigación del Laboratorio de Memoria",
+      "description": "Diseñé y analicé experimentos sobre cómo el intercambio de información digital y el encuadre de la audiencia influyen en la distorsión de la memoria autobiográfica.",
+      "details": "Construí y desplegué estudios Qualtrics; ejecuté análisis de sentimientos y regresión; realicé revisiones de literatura. Presenté hallazgos como primer autor en la Conferencia de la Asociación Psicológica Occidental (2023)."
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "kiddLab": {
+      "title": "Asistente de Investigación",
+      "org": "Kidd Lab, UC Berkeley",
+      "location": "Berkeley, CA",
+      "period": "08/2025 - Presente",
+      "description": "Investigar patrones de atención visual y resultados de aprendizaje de niños en contextos de medios digitales mediante seguimiento ocular y modelado computacional. Procesar y analizar datos con Python y R para identificar características visuales que mejoran la eficacia del aprendizaje. Colaborar con equipos técnicos y de investigación para interpretar datos y guiar decisiones de diseño de medios de aprendizaje."
+    },
+    "bsm": {
+      "title": "Gerente Ejecutivo",
+      "org": "Berkeley Student Media - Associated Students of the University of California",
+      "location": "Berkeley, CA",
+      "period": "06/2024 – Presente",
+      "description": "Dirigir estrategia operativa para el Centro de Medios dirigido por estudiantes de UC Berkeley, sirviendo a más de 1000 usuarios por semestre. Analizar datos de uso y flujo de trabajo (Excel y Tableau) para optimizar la asignación de recursos y la capacidad de servicio. Supervisar equipos de marketing, análisis y finanzas para entregar 4-6 eventos comunitarios por semestre. Diseñé sistemas de seguimiento para inventario, informes de incidentes y personal, mejorando la confiabilidad del servicio."
+    },
+    "memoryLab": {
+      "title": "Asistente de Investigación - Laboratorio de Memoria",
+      "org": "Universidad de California, Santa Cruz. PIs: Dana-Lis Bittner, M.S.; Dr. Benjamin Storm",
+      "location": "Santa Cruz, CA",
+      "period": "06/2020 - 06/2023",
+      "description": "Diseñé y analicé experimentos sobre cómo el intercambio de información digital y el encuadre de la audiencia influyen en la distorsión de la memoria autobiográfica. Construí y desplegué estudios Qualtrics; ejecuté análisis de sentimientos y regresión; realicé revisiones de literatura. Presenté hallazgos como primer autor en la Conferencia de la Asociación Psicológica Occidental (2023)."
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "degree": "B.A en Ciencias Cognitivas. Minors en Ciencia de Datos y Estadística",
+    "university": "Universidad de California, Berkeley",
+    "location": "Berkeley, CA",
+    "period": "2023-2027",
+    "major": "Ciencias Cognitivas",
+    "minor1": "Ciencia de Datos",
+    "minor2": "Estadística",
+    "specialization": "Especializado en investigación de productos y estrategia basada en datos. Experiencia en diseño experimental, análisis de datos y gestión de proyectos en entornos académicos y técnicos."
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "research": "Investigación y PM",
+    "tools": "Herramientas y Datos"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar mensaje. Por favor, inténtalo de nuevo."
+  },
+  "downloads": {
+    "title": "Recursos",
+    "resume": "Descargar Currículum",
+    "poster": "Póster de Investigación"
+  }
+}

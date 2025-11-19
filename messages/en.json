@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Rushaad Mistry",
+    "subtitle": "Cognitive Science Researcher & Product Strategist",
+    "description": "Bridging behavioral sciences and product thinking to translate human data into insights for innovation."
+  },
+  "about": {
+    "title": "About",
+    "description": "Cognitive Science student at UC Berkeley, double-minoring in Data Science & Statistics, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part 'let's try it and see', I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation."
+  },
+  "projects": {
+    "title": "Projects",
+    "eyeTracking": {
+      "title": "Eye-Tracking Research",
+      "description": "Researching children's visual attention patterns and learning outcomes in digital media contexts via eye-tracking and computational modeling.",
+      "details": "Processing and analyzing data with Python & R to identify visual features that improve learning efficacy. Collaborating with technical and research teams to interpret data and guide learning media design decisions."
+    },
+    "accessibility": {
+      "title": "Accessibility Analysis & Dashboard",
+      "description": "Build automated testing pipeline (Selenium + axe-core) to evaluate county websites for WCAG compliance.",
+      "details": "Used ANOVA and t-tests to identify how visual website complexity correlates with accessibility issues. Developed an interactive React + D3.js dashboard visualizing recommendations for inclusive design.",
+      "link": "View Dashboard"
+    },
+    "memory": {
+      "title": "Memory Laboratory Research",
+      "description": "Designed and analyzed experiments on how digital information sharing and audience framing influence autobiographical memory distortion.",
+      "details": "Built and deployed Qualtrics studies; ran sentiment and regression analyses; conducted literature reviews. Presented first-author findings at the Western Psychological Association Conference (2023)."
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "kiddLab": {
+      "title": "Research Assistant",
+      "org": "Kidd Lab, UC Berkeley",
+      "location": "Berkeley, CA",
+      "period": "08/2025 - Present",
+      "description": "Research children's visual attention patterns and learning outcomes in digital media contexts via eye-tracking and computational modeling. Process and analyze data with Python & R to identify visual features that improve learning efficacy. Collaborate with technical and research teams to interpret data and guide learning media design decisions."
+    },
+    "bsm": {
+      "title": "Executive Manager",
+      "org": "Berkeley Student Media - Associated Students of the University of California",
+      "location": "Berkeley, CA",
+      "period": "06/2024 – Present",
+      "description": "Direct operational strategy for UC Berkeley's student-run Media Center, serving 1000+ users/semester. Analyze usage and workflow data (Excel and Tableau) to optimize resource allocation and service capacity. Oversee marketing, analytics, and finance teams to deliver 4-6 community events per semester. Designed tracking systems for inventory, incident reports, and staffing, improving service reliability."
+    },
+    "memoryLab": {
+      "title": "Research Assistant - Memory Laboratory",
+      "org": "University of California, Santa Cruz. PIs: Dana-Lis Bittner, M.S.; Dr. Benjamin Storm",
+      "location": "Santa Cruz, CA",
+      "period": "06/2020 - 06/2023",
+      "description": "Designed and analyzed experiments on how digital information sharing and audience framing influence autobiographical memory distortion. Built and deployed Qualtrics studies; ran sentiment and regression analyses; conducted literature reviews. Presented first-author findings at the Western Psychological Association Conference (2023)."
+    }
+  },
+  "education": {
+    "title": "Education",
+    "degree": "B.A in Cognitive Science. Minors in Data Science and Statistics",
+    "university": "University of California, Berkeley",
+    "location": "Berkeley, CA",
+    "period": "2023-2027",
+    "major": "Cognitive Science",
+    "minor1": "Data Science",
+    "minor2": "Statistics",
+    "specialization": "Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "research": "Research & PM",
+    "tools": "Tools & Data"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  },
+  "downloads": {
+    "title": "Resources",
+    "resume": "Download Resume",
+    "poster": "Research Poster"
+  }
+}
+

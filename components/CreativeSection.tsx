@@ -10,7 +10,7 @@ export function CreativeSection() {
   const creativeWork = [
     {
       org: "ASUC SUPERB Productions",
-      role: "Marketing Staff",
+      role: "Marketing Project Manager",
       period: "01/2024 – Present",
       description: "Design marketing initiatives for SUPERB social media accounts, including our 10K Instagram followers. Collaborate with the marketing team to manage a $10,000+ budget, planning events in line with student culture. Planned, launched, and facilitated communication for ticket giveaways for large artists, such as Dorian Electra.",
       embeds: [

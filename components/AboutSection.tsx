@@ -99,7 +99,7 @@ export function AboutSection() {
               whileHover={{ scale: 1.02, y: -2 }}
               onHoverStart={() => setHoveredTrait(i)}
               onHoverEnd={() => setHoveredTrait(null)}
-              className="relative p-8 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all cursor-pointer"
+              className="relative p-8 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all cursor-pointer"
             >
               <h3 className="font-black text-black dark:text-white mb-3 text-base uppercase tracking-widest">
                 {trait.label}

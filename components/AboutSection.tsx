@@ -15,13 +15,7 @@ export function AboutSection() {
   const [hoveredTrait, setHoveredTrait] = useState<number | null>(null);
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -57,11 +51,12 @@ export function AboutSection() {
                 className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white overflow-hidden relative"
               >
                 <Image
-                  src="/images/profile-photo.jpg"
+                  src="/profile-photo.jpg"
                   alt="Rushaad Mistry"
                   fill
                   className="object-cover"
                   priority
+                  unoptimized
                 />
               </motion.div>
             </div>

@@ -38,13 +38,7 @@ export function SkillsSection() {
   };
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}

@@ -32,30 +32,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-black pt-16">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
-
-      {/* Subtle Mouse Follower */}
-      <motion.div
-        className="fixed w-96 h-96 rounded-full border border-black/5 dark:border-white/5 pointer-events-none z-0"
-        style={{
-          left: mousePos.x - 192,
-          top: mousePos.y - 192,
-        }}
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.03, 0.06, 0.03],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-        }}
-      />
+    <section className="min-h-screen flex items-center justify-center relative bg-white dark:bg-black pt-16">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div

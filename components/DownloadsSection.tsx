@@ -22,13 +22,7 @@ export function DownloadsSection() {
   ];
 
   return (
-    <section className="pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
+    <section className="pt-32 pb-24 bg-black dark:bg-white relative">
 
       <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div

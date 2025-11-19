@@ -62,13 +62,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 20px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}

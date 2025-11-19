@@ -24,13 +24,7 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 20px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -112,7 +106,7 @@ export function ProjectsSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 {index === 0 ? (
-                  <div className="aspect-square bg-white/5 dark:bg-black/5 border border-white/10 dark:border-black/10 relative overflow-hidden group">
+                  <div className="aspect-square border border-white/20 dark:border-black/20 relative overflow-hidden group">
                     <a
                       href="https://camentalhealthaccess.com/"
                       target="_blank"
@@ -135,7 +129,7 @@ export function ProjectsSection() {
                     </a>
                   </div>
                 ) : (
-                  <div className="aspect-square bg-white/5 dark:bg-black/5 border border-white/10 dark:border-black/10 flex items-center justify-center relative overflow-hidden group">
+                  <div className="aspect-square border border-white/20 dark:border-black/20 flex items-center justify-center relative overflow-hidden group">
                     <div className="text-center p-8">
                       <p className="text-xs text-white/30 dark:text-black/30 uppercase tracking-widest mb-2">
                         Project Preview

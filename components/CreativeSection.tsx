@@ -42,13 +42,7 @@ export function CreativeSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -126,7 +120,7 @@ export function CreativeSection() {
 
               {/* Embed Space */}
               <div className="mt-8">
-                <div className="aspect-video bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center relative group">
+                <div className="aspect-video border border-black/20 dark:border-white/20 flex items-center justify-center relative group">
                   <div className="text-center p-8">
                     <p className="text-xs text-black/30 dark:text-white/30 uppercase tracking-widest mb-2 font-light">
                       Embed Space

@@ -5,13 +5,7 @@ import { Award } from "lucide-react";
 
 export function EducationSection() {
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -122,7 +116,7 @@ export function EducationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.05 }}
-                  className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
+                  className="p-4 border border-black/20 dark:border-white/20"
                 >
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">

@@ -65,13 +65,7 @@ export function ExperienceSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
-      {/* Minimal Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 1px, currentColor 1px, currentColor 2px)`,
-        }} />
-      </div>
+    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Minimal Header */}
@@ -196,10 +190,11 @@ export function ExperienceSection() {
                 >
                   <div className="relative w-full aspect-[4/3]">
                     <Image
-                      src="/images/research-poster.jpg"
+                      src="/research-poster.jpg"
                       alt={pres.title}
                       fill
                       className="object-contain"
+                      unoptimized
                     />
                   </div>
                 </motion.div>

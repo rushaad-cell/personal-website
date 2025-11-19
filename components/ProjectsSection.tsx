@@ -108,27 +108,13 @@ export function ProjectsSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 {index === 0 ? (
-                  <div className="aspect-square border border-white/20 dark:border-black/20 relative overflow-hidden group">
-                    <a
-                      href="https://camentalhealthaccess.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full h-full"
-                    >
-                      <iframe
-                        src="https://camentalhealthaccess.com/"
-                        className="w-full h-full border-0 pointer-events-none"
-                        title="California Mental Health Website Accessibility Audit"
-                      />
-                      <div className="absolute inset-0 bg-transparent hover:bg-white/5 dark:hover:bg-black/5 transition-colors cursor-pointer flex items-center justify-center">
-                        <motion.div
-                          className="absolute inset-0 border-2 border-white dark:border-black opacity-0 group-hover:opacity-20 transition-opacity"
-                        />
-                        <span className="text-xs text-white/60 dark:text-black/60 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                          Click to open in new tab
-                        </span>
-                      </div>
-                    </a>
+                  <div className="aspect-square border border-white/20 dark:border-black/20 relative overflow-hidden">
+                    <iframe
+                      src="https://camentalhealthaccess.com/"
+                      className="w-full h-full border-0"
+                      title="California Mental Health Website Accessibility Audit"
+                      allow="fullscreen"
+                    />
                   </div>
                 ) : project.image ? (
                   <div className="aspect-square border border-white/20 dark:border-black/20 relative overflow-hidden group">

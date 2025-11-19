@@ -7,12 +7,12 @@ export function EducationSection() {
   return (
     <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-20 text-center"
+          className="mb-20 text-center w-full"
         >
           <div className="flex items-baseline justify-center gap-6 mb-4">
             <div className="flex-1 h-px bg-white/10 dark:bg-black/10"></div>
@@ -32,7 +32,7 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto"
+          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative w-full max-w-4xl"
         >
           <div className="mb-12 text-center">
             <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">

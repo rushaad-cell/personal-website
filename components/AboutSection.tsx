@@ -69,15 +69,9 @@ export function AboutSection() {
             transition={{ delay: 0.3 }}
             className="md:col-span-3 space-y-8"
           >
-            <div className="space-y-6">
-              <p className="text-3xl md:text-4xl font-black text-black dark:text-white leading-tight">
-                Cognitive Science student at UC Berkeley
-              </p>
+            <div>
               <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
-                Double-minoring in <span className="font-medium">Data Science</span> & <span className="font-medium">Statistics</span>, specializing in product research and data-driven strategy.
-              </p>
-              <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
-                Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
+                Cognitive Science student at UC Berkeley, double-minoring in <span className="font-medium">Data Science</span> & <span className="font-medium">Statistics</span>, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
               </p>
             </div>
           </motion.div>

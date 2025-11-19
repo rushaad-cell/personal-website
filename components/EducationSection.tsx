@@ -32,7 +32,7 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative w-full max-w-4xl"
+          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative w-full"
         >
           <div className="mb-12 text-center">
             <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">

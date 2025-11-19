@@ -24,10 +24,10 @@ export function EyeTrackingSection() {
       url: "https://labs.psychology.illinois.edu/~asbenjam/pubs/StormEtAlInPress.pdf",
     },
     {
-      title: "The Internet and Social Life",
+      title: "Audience-tuning effects on memory: the role of shared reality",
       authors: "Various Authors",
       year: "2005",
-      description: "Comprehensive review of how the Internet affects social relationships and communication patterns.",
+      description: "Research on how audience-tuning influences memory and the mechanisms of shared reality in communication.",
       url: "https://pubmed.ncbi.nlm.nih.gov/16248713/",
     },
   ];
@@ -90,9 +90,14 @@ export function EyeTrackingSection() {
                   <h3 className="font-black text-black dark:text-white mb-2 text-lg uppercase tracking-tight">
                     Computational Modeling
                   </h3>
-                  <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
-                    Processing and analyzing data with Python & R to identify visual features that improve learning efficacy. Collaborating with technical and research teams to interpret data and guide learning media design decisions.
-                  </p>
+                  <div className="text-black/60 dark:text-white/60 leading-relaxed font-light space-y-3">
+                    <p>
+                      Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy.
+                    </p>
+                    <p>
+                      Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -62,17 +62,17 @@ export function CreativeSection() {
         </motion.div>
 
         {/* Creative Work Grid */}
-        <div className="space-y-20">
+        <div className="space-y-32">
           {creativeWork.map((work, index) => (
             <motion.div
               key={work.org}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
-              className="space-y-6"
+              className="space-y-12"
             >
-              <div>
-                <div className="flex items-baseline gap-4 mb-3 flex-wrap">
+              <div className="space-y-6">
+                <div className="flex items-baseline gap-4 mb-6 flex-wrap">
                   <h2 className="text-3xl md:text-4xl font-black text-black dark:text-white">
                     {work.org}
                   </h2>
@@ -80,7 +80,7 @@ export function CreativeSection() {
                     {work.period}
                   </span>
                 </div>
-                <p className="text-sm text-black/50 dark:text-white/50 uppercase tracking-widest mb-4 font-light">
+                <p className="text-sm text-black/50 dark:text-white/50 uppercase tracking-widest mb-6 font-light">
                   {work.role}
                 </p>
                 <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed font-light max-w-3xl">
@@ -91,7 +91,7 @@ export function CreativeSection() {
                     href={`https://${work.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-4 text-black dark:text-white hover:opacity-60 transition-opacity text-sm uppercase tracking-widest font-light"
+                    className="inline-flex items-center gap-2 mt-6 text-black dark:text-white hover:opacity-60 transition-opacity text-sm uppercase tracking-widest font-light"
                   >
                     {work.website}
                     <ExternalLink className="w-3 h-3" />
@@ -100,7 +100,7 @@ export function CreativeSection() {
               </div>
 
               {/* Links */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 {work.embeds.map((embed, i) => (
                   <motion.a
                     key={i}

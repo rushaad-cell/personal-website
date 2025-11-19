@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import { useState } from "react";
-import Image from "next/image";
 
 export function ExperienceSection() {
   const [selectedExp, setSelectedExp] = useState<number | null>(null);
@@ -17,6 +16,13 @@ export function ExperienceSection() {
       description: "Research children's visual attention patterns and learning outcomes in digital media contexts via eye-tracking and computational modeling. Process and analyze data with Python & R to identify visual features that improve learning efficacy. Collaborate with technical and research teams to interpret data and guide learning media design decisions.",
     },
     {
+      title: "Research Assistant",
+      org: "Memory Laboratory, UC Santa Cruz",
+      location: "Santa Cruz, CA",
+      period: "06/2020 - 06/2023",
+      description: "Designed and analyzed experiments on how digital information sharing and audience framing influence autobiographical memory distortion. Built and deployed Qualtrics studies; ran sentiment and regression analyses; conducted literature reviews. Presented first-author findings at the Western Psychological Association Conference (2023).",
+    },
+    {
       title: "Executive Manager",
       org: "Berkeley Student Media",
       location: "Berkeley, CA",
@@ -24,7 +30,7 @@ export function ExperienceSection() {
       description: "Direct operational strategy for UC Berkeley's student-run Media Center, serving 1000+ users/semester. Analyze usage and workflow data (Excel and Tableau) to optimize resource allocation and service capacity. Oversee marketing, analytics, and finance teams to deliver 4-6 community events per semester. Designed tracking systems for inventory, incident reports, and staffing, improving service reliability.",
     },
     {
-      title: "Marketing Staff",
+      title: "Marketing Manager",
       org: "ASUC SUPERB Productions, UC Berkeley",
       location: "Berkeley, CA",
       period: "01/2024 – Present",
@@ -43,13 +49,6 @@ export function ExperienceSection() {
       location: "Berkeley, CA",
       period: "09/2023 – Present",
       description: "Published music journalism and PR pieces focused on curating a diverse pool of BIPOC and LGBTQ+ voices in music, such as 'The chaos of catharsis: Doom Loop Festival, starring Yeule.' Attended weekly editorial staff meetings to brainstorm articles and discuss the latest trends in music.",
-    },
-    {
-      title: "Research Assistant",
-      org: "Memory Laboratory, UC Santa Cruz",
-      location: "Santa Cruz, CA",
-      period: "06/2020 - 06/2023",
-      description: "Designed and analyzed experiments on how digital information sharing and audience framing influence autobiographical memory distortion. Built and deployed Qualtrics studies; ran sentiment and regression analyses; conducted literature reviews. Presented first-author findings at the Western Psychological Association Conference (2023).",
     },
   ];
 
@@ -184,20 +183,18 @@ export function ExperienceSection() {
                     <span>{pres.date}</span>
                   </div>
                 </div>
-                <motion.div
+                <motion.a
+                  href="https://drive.google.com/file/d/1oH3f7ROARCjpfzpnnlPvG7ROFHsV_lSB/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
-                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden relative max-w-2xl mx-auto"
+                  className="mt-6 inline-block"
                 >
-                  <div className="relative w-full aspect-[3/4]">
-                    <Image
-                      src="/research-poster.jpg"
-                      alt={pres.title}
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                </motion.div>
+                  <button className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white border-2 border-white/20 dark:border-black/20 hover:border-white dark:hover:border-black transition-all text-sm uppercase tracking-widest font-medium">
+                    Click here to see poster
+                    <ExternalLink className="w-4 h-4 inline-block ml-2" />
+                  </button>
+                </motion.a>
               </motion.div>
             ))}
           </div>

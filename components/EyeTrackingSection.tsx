@@ -114,22 +114,6 @@ export function EyeTrackingSection() {
               </div>
             </motion.div>
 
-            <div className="pt-8 border-t border-black/10 dark:border-white/10">
-              <div className="flex flex-wrap gap-4">
-                {["Python", "R", "Eyelink", "PsychoPy"].map((tool, i) => (
-                  <motion.span
-                    key={tool}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest border-2 border-black dark:border-white"
-                  >
-                    {tool}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
 

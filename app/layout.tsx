@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/lib/theme-provider";
 import { Navigation } from "@/components/Navigation";
-import { EasterEggSection } from "@/components/EasterEggSection";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,13 +51,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <Navigation />
-          <div className="pt-16 md:pt-20">
-            <div className="h-16 md:h-20"></div>
-            {children}
-          </div>
-        </ThemeProvider>
+        <Navigation />
+        <div className="pt-16 md:pt-20">
+          <div className="h-16 md:h-20"></div>
+          {children}
+        </div>
       </body>
     </html>
   );

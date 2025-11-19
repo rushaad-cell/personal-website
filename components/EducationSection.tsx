@@ -69,15 +69,16 @@ export function EducationSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="pt-12 border-t border-white/10 dark:border-black/10 mb-12 text-center"
+            className="pt-12 border-t border-white/10 mb-12"
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Award className="w-5 h-5 text-black dark:text-white" />
-              <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight">
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '16px' }}>
+              <Award className="w-5 h-5 text-black" />
+              <h3 className="text-2xl font-black text-black uppercase tracking-tight">
                 Specializations
               </h3>
             </div>
-            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light max-w-2xl mx-auto">
+            <p className="text-lg text-black/60 leading-relaxed font-light" style={{ maxWidth: '42rem', textAlign: 'center', margin: '0 auto' }}>
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
           </motion.div>
@@ -87,12 +88,13 @@ export function EducationSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="pt-12 border-t border-white/10 dark:border-black/10"
+            className="pt-12 border-t border-white/10"
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
           >
-            <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6 text-center">
+            <h3 className="text-2xl font-black text-black uppercase tracking-tight mb-6" style={{ textAlign: 'center', width: '100%' }}>
               Relevant Coursework
             </h3>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto justify-items-center items-center">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', maxWidth: '48rem', width: '100%', margin: '0 auto', justifyContent: 'center', justifyItems: 'center' }}>
               {[
                 { code: "MATH 55", title: "Discrete Mathematics" },
                 { code: "STAT 133", title: "Concepts in Computing with Data" },
@@ -114,7 +116,8 @@ export function EducationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.05 }}
-                  className="p-4 border border-black/20 dark:border-white/20 text-center w-full max-w-sm"
+                  className="p-4 border border-black/20 text-center"
+                  style={{ width: '100%', maxWidth: '20rem', margin: '0 auto' }}
                 >
                   <div className="mb-2">
                     <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">

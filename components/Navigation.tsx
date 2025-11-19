@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "@/lib/theme-provider";
-import { Moon, Sun, Menu, X, Home, User, Briefcase, Code, Mail, Sparkles, GraduationCap, Palette, Languages } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, Code, Mail, Sparkles, GraduationCap, Palette, Languages } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -10,24 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  
-  let theme: "dark" | "light" = "light";
-  let toggleTheme: () => void = () => {};
-  
-  try {
-    const themeContext = useTheme();
-    theme = themeContext.theme;
-    toggleTheme = themeContext.toggleTheme;
-  } catch (e) {
-    // ThemeProvider not available during SSR
-  }
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,22 +43,22 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
-                className={cn(
-                  "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                  scrolled
-                    ? "bg-white/95 dark:bg-black/95 backdrop-blur-md"
-                    : "bg-white/80 dark:bg-black/80 backdrop-blur-sm"
-                )}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          scrolled
+            ? "bg-white/95 backdrop-blur-md"
+            : "bg-white/80 backdrop-blur-sm"
+        )}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link
-              href="/"
-              className="text-lg font-black text-black dark:text-white uppercase tracking-tight"
-            >
-              RM
-            </Link>
+                    <Link
+                      href="/"
+                      className="text-lg font-black text-black uppercase tracking-tight"
+                    >
+                      RM
+                    </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
@@ -87,16 +70,16 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "px-2 py-2 text-xs font-medium uppercase tracking-widest transition-colors relative",
-                      active
-                        ? "text-black dark:text-white"
-                        : "text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white"
+                              "px-2 py-2 text-xs font-medium uppercase tracking-widest transition-colors relative",
+                              active
+                                ? "text-black"
+                                : "text-black/50 hover:text-black"
                     )}
                   >
                     {active && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-black dark:bg-white"
+                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
@@ -153,7 +136,7 @@ export function Navigation() {
                       location.reload();
                     }
                   }}
-                  className="text-xs uppercase tracking-widest bg-transparent border-none text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white cursor-pointer outline-none"
+                  className="text-xs uppercase tracking-widest bg-transparent border-none text-black/50 hover:text-black cursor-pointer outline-none"
                 >
                   <option value="en">EN</option>
                   <option value="es">ES</option>
@@ -162,27 +145,10 @@ export function Navigation() {
               </div>
               <div id="google_translate_element" className="hidden"></div>
               
-              {/* Theme Toggle */}
-              {mounted && (
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={toggleTheme}
-                  className="p-2 text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-colors"
-                  aria-label="Toggle theme"
-                >
-                  {theme === "dark" ? (
-                    <Sun className="w-4 h-4" />
-                  ) : (
-                    <Moon className="w-4 h-4" />
-                  )}
-                </motion.button>
-              )}
-
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden p-2 text-black dark:text-white"
+                className="md:hidden p-2 text-black"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -198,7 +164,7 @@ export function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-black/10 dark:border-white/10 overflow-hidden"
+                      className="md:hidden border-t border-black/10 overflow-hidden"
             >
               <div className="px-6 py-4 space-y-2">
                 {navItems.map((item) => {
@@ -210,9 +176,9 @@ export function Navigation() {
                       onClick={() => setIsOpen(false)}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium uppercase tracking-widest transition-colors",
-                        isActive(item.href)
-                          ? "bg-black dark:bg-white text-white dark:text-black"
-                          : "text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5"
+                                isActive(item.href)
+                                  ? "bg-black text-white"
+                                  : "text-black hover:bg-black/5"
                       )}
                     >
                       <Icon className="w-4 h-4" />

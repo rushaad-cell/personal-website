@@ -92,8 +92,8 @@ export function Navigation() {
             {/* Controls */}
             <div className="flex items-center gap-6">
               {/* Language Toggle */}
-              <div className="hidden md:flex items-center gap-2 border-r border-black/10 dark:border-white/10 pr-6">
-                <Languages className="w-4 h-4 text-black/50 dark:text-white/50" />
+              <div className="hidden md:flex items-center gap-2 border-r border-black/10 pr-6">
+                <Languages className="w-4 h-4 text-black/50" />
                 <select
                   onChange={(e) => {
                     const lang = e.target.value as "en" | "es" | "de";

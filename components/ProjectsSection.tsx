@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -20,6 +21,7 @@ export function ProjectsSection() {
       description: "Experiments on how digital information sharing influences autobiographical memory distortion.",
       details: "Built and deployed Qualtrics studies; ran sentiment and regression analyses; conducted literature reviews. Presented first-author findings at the Western Psychological Association Conference (2023).",
       tech: ["Qualtrics", "R", "Sentiment Analysis", "Regression"],
+      image: "/memory-research.jpg",
     },
   ];
 
@@ -127,6 +129,19 @@ export function ProjectsSection() {
                         </span>
                       </div>
                     </a>
+                  </div>
+                ) : project.image ? (
+                  <div className="aspect-square border border-white/20 dark:border-black/20 relative overflow-hidden group">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                    <motion.div
+                      className="absolute inset-0 border-2 border-white dark:border-black opacity-0 group-hover:opacity-20 transition-opacity"
+                    />
                   </div>
                 ) : (
                   <div className="aspect-square border border-white/20 dark:border-black/20 flex items-center justify-center relative overflow-hidden group">

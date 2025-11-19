@@ -14,8 +14,7 @@ export function CreativeSection() {
       period: "01/2024 – Present",
       description: "Design marketing initiatives for SUPERB social media accounts, including our 10K Instagram followers. Collaborate with the marketing team to manage a $10,000+ budget, planning events in line with student culture. Planned, launched, and facilitated communication for ticket giveaways for large artists, such as Dorian Electra.",
       embeds: [
-        { type: "reel", label: "Instagram Reel", url: "#" },
-        { type: "giveaway", label: "Ticket Giveaway Campaign", url: "#" },
+        { type: "instagram", label: "Instagram", url: "https://www.instagram.com/asucsuperb/?hl=en" },
       ],
     },
     {
@@ -25,7 +24,7 @@ export function CreativeSection() {
       description: "Created content such as poetry, reviews, and op-ed pieces for independent student-funded art magazine. Manages a 10+ person team to lead social media marketing campaigns while maintaining a trendy brand voice. Planned large and small scale events for the local Berkeley community and broader Bay Area. Managed a six-person team to build and operations for our custom website.",
       website: "gagmagazine.cargo.site",
       embeds: [
-        { type: "reel", label: "Social Media Campaign", url: "#" },
+        { type: "instagram", label: "Instagram", url: "https://www.instagram.com/gagmagazinee/?hl=en" },
         { type: "website", label: "Website", url: "https://gagmagazine.cargo.site" },
       ],
     },
@@ -35,8 +34,8 @@ export function CreativeSection() {
       period: "09/2023 – Present",
       description: "Published music journalism and PR pieces focused on curating a diverse pool of BIPOC and LGBTQ+ voices in music, such as 'The chaos of catharsis: Doom Loop Festival, starring Yeule.' Attended weekly editorial staff meetings to brainstorm articles and discuss the latest trends in music.",
       embeds: [
-        { type: "article", label: "Featured Article", url: "#" },
-        { type: "reel", label: "Editorial Content", url: "#" },
+        { type: "author", label: "Author Page", url: "https://berkeleybside.com/author/rushaadm/" },
+        { type: "instagram", label: "Instagram", url: "https://www.instagram.com/berkeleybside/?hl=en" },
       ],
     },
   ];
@@ -100,7 +99,7 @@ export function CreativeSection() {
                 )}
               </div>
 
-              {/* Embed Links */}
+              {/* Links */}
               <div className="flex flex-wrap gap-3">
                 {work.embeds.map((embed, i) => (
                   <motion.a
@@ -116,20 +115,6 @@ export function CreativeSection() {
                     {embed.label}
                   </motion.a>
                 ))}
-              </div>
-
-              {/* Embed Space */}
-              <div className="mt-8">
-                <div className="aspect-video border border-black/20 dark:border-white/20 flex items-center justify-center relative group">
-                  <div className="text-center p-8">
-                    <p className="text-xs text-black/30 dark:text-white/30 uppercase tracking-widest mb-2 font-light">
-                      Embed Space
-                    </p>
-                    <p className="text-sm text-black/50 dark:text-white/50 font-light">
-                      Add Instagram/TikTok embed or website preview here
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}

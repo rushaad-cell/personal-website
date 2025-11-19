@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, TrendingUp, BookOpen } from "lucide-react";
+import { Brain, TrendingUp, BookOpen, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -10,22 +10,25 @@ export function EyeTrackingSection() {
 
   const papers = [
     {
-      title: "Visual Attention in Digital Learning Environments",
-      authors: "Kidd Lab Research",
-      year: "2025",
-      description: "Investigating how visual features influence learning outcomes through eye-tracking analysis.",
+      title: "Audience-Tuning and Saying-is-Believing Effects in the Context of Social Media",
+      authors: "Mistry, R., Heyveld, L., Bittner, D., Avilla, H., Cushman, S., Storm, B.",
+      year: "2023",
+      description: "Investigating how digital information sharing and audience framing influence autobiographical memory distortion.",
+      url: "https://escholarship.org/uc/item/6wk8j6fv",
     },
     {
-      title: "Computational Modeling of Gaze Patterns",
+      title: "Using the Internet to access information inflates future use of the Internet to access other information",
+      authors: "Storm, B. C., Stone, S. M., & Benjamin, A. S.",
+      year: "2016",
+      description: "Research showing that using the Internet to retrieve information alters a person's propensity to use the Internet to retrieve other information.",
+      url: "https://labs.psychology.illinois.edu/~asbenjam/pubs/StormEtAlInPress.pdf",
+    },
+    {
+      title: "The Internet and Social Life",
       authors: "Various Authors",
-      year: "2024",
-      description: "Advanced methods for analyzing and predicting visual attention patterns.",
-    },
-    {
-      title: "Eye-Tracking in Educational Media Design",
-      authors: "Research Community",
-      year: "2023-2025",
-      description: "Best practices for using eye-tracking data to improve educational content design.",
+      year: "2005",
+      description: "Comprehensive review of how the Internet affects social relationships and communication patterns.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/16248713/",
     },
   ];
 
@@ -147,21 +150,24 @@ export function EyeTrackingSection() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {papers.map((paper, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={paper.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="p-6 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all"
+                className="p-6 border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white transition-all block group"
               >
                 <div className="mb-3">
                   <span className="text-xs font-medium text-black/60 dark:text-white/60 uppercase tracking-widest">
                     {paper.year}
                   </span>
                 </div>
-                <h4 className="font-black text-black dark:text-white mb-2 text-lg leading-tight">
+                <h4 className="font-black text-black dark:text-white mb-2 text-lg leading-tight group-hover:underline">
                   {paper.title}
                 </h4>
                 <p className="text-xs text-black/60 dark:text-white/60 mb-3 uppercase tracking-widest font-light">
@@ -170,7 +176,11 @@ export function EyeTrackingSection() {
                 <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed font-light">
                   {paper.description}
                 </p>
-              </motion.div>
+                <div className="mt-3 flex items-center gap-2 text-xs text-black/50 dark:text-white/50 group-hover:text-black dark:group-hover:text-white transition-colors">
+                  <ExternalLink className="w-3 h-3" />
+                  <span>Read Paper</span>
+                </div>
+              </motion.a>
             ))}
           </div>
         </motion.div>

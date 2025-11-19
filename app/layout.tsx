@@ -59,7 +59,6 @@ export default function RootLayout({
             <div className="h-16 md:h-20"></div>
             {children}
           </div>
-          <EasterEggSection />
         </ThemeProvider>
       </body>
     </html>

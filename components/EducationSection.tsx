@@ -32,24 +32,24 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto"
+          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto text-center"
         >
           <div className="mb-12">
-            <div>
+            <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
                 B.A in Cognitive Science
               </h2>
               <p className="text-2xl text-black/70 dark:text-white/70 font-light mb-4">
                 University of California, Berkeley
               </p>
-              <div className="flex items-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
+              <div className="flex items-center justify-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
                 <span>Berkeley, CA</span>
                 <span>•</span>
                 <span>2023-2027</span>
               </div>
 
               {/* Minors */}
-              <div className="flex flex-wrap gap-3 mb-12">
+              <div className="flex flex-wrap gap-3 mb-12 justify-center">
                 {["Cognitive Science", "Data Science", "Statistics"].map((minor, i) => (
                   <motion.span
                     key={minor}
@@ -73,13 +73,13 @@ export function EducationSection() {
             transition={{ delay: 0.3 }}
             className="pt-12 border-t border-white/10 dark:border-black/10 mb-12"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <Award className="w-5 h-5 text-black dark:text-white" />
               <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight">
                 Specializations
               </h3>
             </div>
-            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
+            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light text-center">
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
           </motion.div>
@@ -91,25 +91,25 @@ export function EducationSection() {
             transition={{ delay: 0.4 }}
             className="pt-12 border-t border-white/10 dark:border-black/10"
           >
-            <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6">
+            <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6 text-center">
               Relevant Coursework
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { code: "COGSCI 132", title: "Rhythms of the Brain: from Neuronal Communication to Function", grade: "A+" },
-                { code: "PSYCH C127", title: "Cognitive Neuroscience", grade: "A" },
-                { code: "PHILOS 12A", title: "Introduction to Logic", grade: "A" },
-                { code: "MCELLBI C61", title: "Brain, Mind, and Behavior", grade: "A-" },
-                { code: "LINGUIS 100", title: "Introduction to Linguistic Science", grade: "A-" },
-                { code: "DATA C88C", title: "Computational Structures in Data Science", grade: "A-" },
-                { code: "COGSCI C126", title: "Perception", grade: "B+" },
-                { code: "COGSCI 1", title: "Introduction to Cognitive Science", grade: "B+" },
-                { code: "DATA C8", title: "Foundations of Data Science", grade: "B+" },
-                { code: "MATH 55", title: "Discrete Mathematics", grade: "B" },
-                { code: "UGBA 192T", title: "Topics in Responsible Business", grade: "A" },
-                { code: "STAT 133", title: "Concepts in Computing with Data", grade: "In Progress" },
-                { code: "PSYCH 101", title: "Research and Data Analysis in Psychology", grade: "In Progress" },
-                { code: "GEOG C188", title: "Geographic Information Science", grade: "In Progress" },
+                { code: "COGSCI 132", title: "Rhythms of the Brain: from Neuronal Communication to Function" },
+                { code: "PSYCH C127", title: "Cognitive Neuroscience" },
+                { code: "PHILOS 12A", title: "Introduction to Logic" },
+                { code: "MCELLBI C61", title: "Brain, Mind, and Behavior" },
+                { code: "LINGUIS 100", title: "Introduction to Linguistic Science" },
+                { code: "DATA C88C", title: "Computational Structures in Data Science" },
+                { code: "COGSCI C126", title: "Perception" },
+                { code: "COGSCI 1", title: "Introduction to Cognitive Science" },
+                { code: "DATA C8", title: "Foundations of Data Science" },
+                { code: "MATH 55", title: "Discrete Mathematics" },
+                { code: "UGBA 192T", title: "Topics in Responsible Business" },
+                { code: "STAT 133", title: "Concepts in Computing with Data" },
+                { code: "PSYCH 101", title: "Research and Data Analysis in Psychology" },
+                { code: "GEOG C188", title: "Geographic Information Science" },
               ].map((course, i) => (
                 <motion.div
                   key={course.code}
@@ -118,12 +118,9 @@ export function EducationSection() {
                   transition={{ delay: 0.5 + i * 0.05 }}
                   className="p-4 border border-black/20 dark:border-white/20"
                 >
-                  <div className="flex items-start justify-between gap-4 mb-2">
+                  <div className="mb-2">
                     <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">
                       {course.code}
-                    </span>
-                    <span className="text-xs text-black/50 dark:text-white/50 uppercase tracking-widest">
-                      {course.grade}
                     </span>
                   </div>
                   <p className="text-sm text-black/70 dark:text-white/70 font-light leading-relaxed">

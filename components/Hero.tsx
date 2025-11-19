@@ -71,7 +71,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mb-24"
+            className="mb-32"
           >
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-widest text-black/40 dark:text-white/40 font-light">
               <span>Cognitive Science</span>
@@ -87,7 +87,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-4 justify-center mt-20"
+            className="flex flex-wrap gap-4 justify-center"
           >
             <Link href="/about">
               <motion.button

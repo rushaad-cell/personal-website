@@ -16,6 +16,10 @@ export function SkillsSection() {
       "Workflow & System Design",
       "UX Testing",
       "UX Research",
+      "Sentiment Analysis",
+      "Literature Reviews",
+      "Project Management",
+      "Data Visualization",
     ],
     tools: [
       "Python (pandas, numpy, scikit-learn, statsmodels)",
@@ -26,7 +30,11 @@ export function SkillsSection() {
       "Quarto",
       "D3.js",
       "React",
+      "Next.js",
+      "TypeScript",
       "Qualtrics",
+      "Selenium",
+      "Excel",
       "Notion",
       "Jira",
       "Monday.com",
@@ -34,6 +42,7 @@ export function SkillsSection() {
       "Jupyter",
       "SPSS",
       "PsychoPy",
+      "Google Suite",
     ],
   };
 

@@ -8,14 +8,3 @@
 [build.environment]
   NODE_VERSION = "20"
 
-[[redirects]]
-  from = "/*"
-  to = "/:locale"
-  status = 200
-  force = false
-
-[[redirects]]
-  from = "/"
-  to = "/en"
-  status = 301
-

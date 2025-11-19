@@ -53,15 +53,13 @@ export function AboutSection() {
             <div className="relative group">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white"
+                className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white overflow-hidden"
               >
-                <div className="w-full h-full bg-white dark:bg-black flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
-                      Add your photo here
-                    </p>
-                  </div>
-                </div>
+                <img
+                  src="/images/profile-photo.jpg"
+                  alt="Rushaad Mistry"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             </div>
           </motion.div>

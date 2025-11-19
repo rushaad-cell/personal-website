@@ -111,19 +111,32 @@ export function ProjectsSection() {
                 className="md:col-span-5 relative"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="aspect-square bg-white/5 dark:bg-black/5 border border-white/10 dark:border-black/10 flex items-center justify-center relative overflow-hidden group">
-                  <div className="text-center p-8">
-                    <p className="text-xs text-white/30 dark:text-black/30 uppercase tracking-widest mb-2">
-                      Project Preview
-                    </p>
-                    <p className="text-sm text-white/50 dark:text-black/50 font-light">
-                      Add screenshot or visualization here
-                    </p>
+                {index === 0 ? (
+                  <div className="aspect-square bg-white/5 dark:bg-black/5 border border-white/10 dark:border-black/10 relative overflow-hidden group">
+                    <img
+                      src="/images/accessibility-audit.jpg"
+                      alt="California Mental Health Website Accessibility Audit"
+                      className="w-full h-full object-cover"
+                    />
+                    <motion.div
+                      className="absolute inset-0 border-2 border-white dark:border-black opacity-0 group-hover:opacity-20 transition-opacity"
+                    />
                   </div>
-                  <motion.div
-                    className="absolute inset-0 border-2 border-white dark:border-black opacity-0 group-hover:opacity-20 transition-opacity"
-                  />
-                </div>
+                ) : (
+                  <div className="aspect-square bg-white/5 dark:bg-black/5 border border-white/10 dark:border-black/10 flex items-center justify-center relative overflow-hidden group">
+                    <div className="text-center p-8">
+                      <p className="text-xs text-white/30 dark:text-black/30 uppercase tracking-widest mb-2">
+                        Project Preview
+                      </p>
+                      <p className="text-sm text-white/50 dark:text-black/50 font-light">
+                        Add screenshot or visualization here
+                      </p>
+                    </div>
+                    <motion.div
+                      className="absolute inset-0 border-2 border-white dark:border-black opacity-0 group-hover:opacity-20 transition-opacity"
+                    />
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           ))}

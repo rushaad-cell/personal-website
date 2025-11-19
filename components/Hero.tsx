@@ -94,7 +94,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mb-16"
+            className="mb-24"
           >
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-widest text-black/40 dark:text-white/40 font-light">
               <span>Cognitive Science</span>
@@ -110,7 +110,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-4 justify-center mt-12"
+            className="flex flex-wrap gap-4 justify-center mt-20"
           >
             <Link href="/about">
               <motion.button
@@ -131,35 +131,6 @@ export function Hero() {
                 Projects
               </motion.button>
             </Link>
-          </motion.div>
-
-          {/* Minimal Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className="mt-24 grid grid-cols-3 gap-8 max-w-2xl mx-auto border-t border-black/10 dark:border-white/10 pt-12"
-          >
-            {[
-              { label: "Research Papers", value: "3+" },
-              { label: "Years Experience", value: "5+" },
-              { label: "Projects", value: "10+" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 + i * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-black text-black dark:text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </motion.div>
       </div>

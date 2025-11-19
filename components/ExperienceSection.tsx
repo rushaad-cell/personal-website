@@ -170,23 +170,35 @@ export function ExperienceSection() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className="space-y-3"
+                className="space-y-6"
               >
-                <p className="text-sm text-white/50 dark:text-black/50 font-light">
-                  {pres.authors}
-                </p>
-                <h3 className="text-xl md:text-2xl font-black text-white dark:text-black leading-tight">
-                  {pres.title}
-                </h3>
-                <div className="flex flex-wrap items-center gap-3 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
-                  <span>{pres.type}</span>
-                  <span>•</span>
-                  <span>{pres.venue}</span>
-                  <span>•</span>
-                  <span>{pres.location}</span>
-                  <span>•</span>
-                  <span>{pres.date}</span>
+                <div className="space-y-3">
+                  <p className="text-sm text-white/50 dark:text-black/50 font-light">
+                    {pres.authors}
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-black text-white dark:text-black leading-tight">
+                    {pres.title}
+                  </h3>
+                  <div className="flex flex-wrap items-center gap-3 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
+                    <span>{pres.type}</span>
+                    <span>•</span>
+                    <span>{pres.venue}</span>
+                    <span>•</span>
+                    <span>{pres.location}</span>
+                    <span>•</span>
+                    <span>{pres.date}</span>
+                  </div>
                 </div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden"
+                >
+                  <img
+                    src="/images/research-poster.jpg"
+                    alt={pres.title}
+                    className="w-full h-auto"
+                  />
+                </motion.div>
               </motion.div>
             ))}
           </div>

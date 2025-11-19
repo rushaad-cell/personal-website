@@ -89,11 +89,11 @@ export function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="max-w-2xl mx-auto">
           {/* Contact Methods */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
             {contactMethods.map((method, i) => {
@@ -125,110 +125,6 @@ export function ContactSection() {
               );
             })}
           </motion.div>
-
-          {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                required
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-light"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-light"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                required
-                rows={6}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors resize-none font-light"
-              />
-            </div>
-            <motion.button
-              type="submit"
-              disabled={status === "sending"}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full px-8 py-5 bg-black dark:bg-white text-white dark:text-black font-medium text-sm uppercase tracking-widest border-2 border-black dark:border-white hover:bg-transparent hover:text-black dark:hover:text-white transition-all disabled:opacity-50 flex items-center justify-center gap-3"
-            >
-              {status === "sending" ? (
-                <>
-                  <motion.span
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
-                  />
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <Send className="w-4 h-4" />
-                  Send Message
-                </>
-              )}
-            </motion.button>
-            {status === "success" && (
-              <motion.p
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-sm text-black/60 dark:text-white/60 font-light text-center"
-              >
-                Message sent successfully
-              </motion.p>
-            )}
-            {status === "error" && (
-              <motion.p
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-sm text-black/60 dark:text-white/60 font-light text-center"
-              >
-                Failed to send. Please try again.
-              </motion.p>
-            )}
-          </motion.form>
         </div>
       </div>
     </section>

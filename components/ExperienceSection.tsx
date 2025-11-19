@@ -72,7 +72,7 @@ export function ExperienceSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,7 +80,7 @@ export function ExperienceSection() {
           className="mb-32"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight pl-0 md:pl-0">
               EXPERIENCE
             </h1>
             <div className="flex-1 h-px bg-white/20 dark:bg-black/20"></div>
@@ -154,8 +154,8 @@ export function ExperienceSection() {
           transition={{ delay: 0.5 }}
           className="mt-32 pt-32 border-t border-white/10 dark:border-black/10"
         >
-          <div className="mb-16">
-            <h2 className="text-5xl md:text-6xl font-black text-white dark:text-black leading-none tracking-tight mb-4">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-white dark:text-black leading-none tracking-tight mb-3">
               PRESENTATIONS
             </h2>
             <p className="text-sm text-white/40 dark:text-black/40 uppercase tracking-widest font-light">
@@ -163,33 +163,29 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {presentations.map((pres, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className="space-y-4"
+                className="space-y-3"
               >
-                <div className="flex items-baseline justify-between gap-6 flex-wrap">
-                  <div className="flex-1">
-                    <p className="text-sm text-white/50 dark:text-black/50 font-light mb-2">
-                      {pres.authors}
-                    </p>
-                    <h3 className="text-2xl md:text-3xl font-black text-white dark:text-black mb-3 leading-tight">
-                      {pres.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-4 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
-                      <span>{pres.type}</span>
-                      <span>•</span>
-                      <span>{pres.venue}</span>
-                      <span>•</span>
-                      <span>{pres.location}</span>
-                      <span>•</span>
-                      <span>{pres.date}</span>
-                    </div>
-                  </div>
+                <p className="text-sm text-white/50 dark:text-black/50 font-light">
+                  {pres.authors}
+                </p>
+                <h3 className="text-xl md:text-2xl font-black text-white dark:text-black leading-tight">
+                  {pres.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-3 text-white/40 dark:text-black/40 text-xs uppercase tracking-widest">
+                  <span>{pres.type}</span>
+                  <span>•</span>
+                  <span>{pres.venue}</span>
+                  <span>•</span>
+                  <span>{pres.location}</span>
+                  <span>•</span>
+                  <span>{pres.date}</span>
                 </div>
               </motion.div>
             ))}

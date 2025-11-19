@@ -22,7 +22,7 @@ export function AboutSection() {
         }} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-8 md:pl-8 relative z-10">
         {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -31,7 +31,7 @@ export function AboutSection() {
           className="mb-24"
         >
           <div className="flex items-baseline gap-6 mb-4">
-            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight pl-0 md:pl-0">
               ABOUT
             </h1>
             <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
@@ -103,12 +103,12 @@ export function AboutSection() {
               whileHover={{ scale: 1.02, y: -2 }}
               onHoverStart={() => setHoveredTrait(i)}
               onHoverEnd={() => setHoveredTrait(null)}
-              className="relative p-6 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all cursor-pointer"
+              className="relative p-8 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all cursor-pointer"
             >
-              <h3 className="font-black text-black dark:text-white mb-2 text-sm uppercase tracking-widest">
+              <h3 className="font-black text-black dark:text-white mb-3 text-base uppercase tracking-widest">
                 {trait.label}
               </h3>
-              <p className="text-xs text-black/50 dark:text-white/50 font-light">
+              <p className="text-sm text-black/50 dark:text-white/50 font-light">
                 {trait.desc}
               </p>
               {hoveredTrait === i && (

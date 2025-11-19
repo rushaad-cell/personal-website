@@ -31,9 +31,10 @@ export function EasterEggSection() {
         onClick={() => setIsExpanded(!isExpanded)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="text-xs text-black/30 dark:text-white/30 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest font-light"
+        className="px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white text-xs text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white transition-all uppercase tracking-widest font-light"
+        title="Easter egg: NYT letters"
       >
-        {isExpanded ? "Hide" : "Show"}
+        {isExpanded ? "Hide" : "Easter Egg"}
       </motion.button>
 
       {isExpanded && (

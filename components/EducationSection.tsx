@@ -42,13 +42,13 @@ export function EducationSection() {
         >
           <div className="flex items-start gap-12 mb-12">
             <div className="flex-1">
-              <h2 className="text-4xl md:text-5xl font-black text-white dark:text-black mb-4 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
                 B.A in Cognitive Science
               </h2>
-              <p className="text-2xl text-white/70 dark:text-black/70 font-light mb-4">
+              <p className="text-2xl text-black/70 dark:text-white/70 font-light mb-4">
                 University of California, Berkeley
               </p>
-              <div className="flex items-center gap-4 text-white/50 dark:text-black/50 text-sm uppercase tracking-widest mb-8">
+              <div className="flex items-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
                 <span>Berkeley, CA</span>
                 <span>•</span>
                 <span>2023-2027</span>
@@ -80,12 +80,12 @@ export function EducationSection() {
             className="pt-12 border-t border-white/10 dark:border-black/10"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Award className="w-5 h-5 text-white dark:text-black" />
-              <h3 className="text-2xl font-black text-white dark:text-black uppercase tracking-tight">
+              <Award className="w-5 h-5 text-black dark:text-white" />
+              <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight">
                 Specializations
               </h3>
             </div>
-            <p className="text-lg text-white/60 dark:text-black/60 leading-relaxed font-light">
+            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
           </motion.div>

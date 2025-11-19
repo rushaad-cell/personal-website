@@ -52,6 +52,17 @@ export function ExperienceSection() {
     },
   ];
 
+  const presentations = [
+    {
+      authors: "Mistry, R., Heyveld, L., Bittner, D., Avilla, H., Cushman, S., Storm, B.",
+      title: "\"Today was epic\": Investigating Audience-Tuning and Saying-is-Believing Effects in the Context of Social Media",
+      venue: "Western Psychological Association",
+      location: "Riverside CA, United States",
+      date: "April 27, 2023",
+      type: "Poster Presentation",
+    },
+  ];
+
   return (
     <section className="min-h-screen py-32 bg-black dark:bg-white relative overflow-hidden">
       {/* Minimal Background Pattern */}

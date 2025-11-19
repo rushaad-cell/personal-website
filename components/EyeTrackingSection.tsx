@@ -60,8 +60,8 @@ export function EyeTrackingSection() {
             animate={{ opacity: 1, x: 0 }}
             className="relative"
           >
-            <div className="border-2 border-white p-4">
-              <div className="relative w-full aspect-video bg-white">
+            <div className="border-4 border-white p-2">
+              <div className="relative w-full aspect-video bg-white border-2 border-white">
                 <Image
                   src="/eye-tracking.jpg"
                   alt="Eye-tracking visualization"
@@ -81,35 +81,35 @@ export function EyeTrackingSection() {
           >
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 border-2 border-white"
+              className="p-6"
             >
-              <div className="flex items-start gap-6 mb-4">
-                <Brain className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em]">
-                    COMPUTATIONAL MODELING
-                  </h3>
-                  <p className="text-white/80 leading-relaxed font-light text-sm">
-                    Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy. Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
-                  </p>
-                </div>
+              <div className="mb-2">
+                <span className="text-white/50 font-mono text-sm">{'>'}</span>
+              </div>
+              <div className="ml-4">
+                <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em] font-mono">
+                  COMPUTATIONAL MODELING
+                </h3>
+                <p className="text-white/80 leading-relaxed font-light text-sm font-mono">
+                  Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy. Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
+                </p>
               </div>
             </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 border-2 border-white"
+              className="p-6"
             >
-              <div className="flex items-start gap-6">
-                <TrendingUp className="w-5 h-5 text-white mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em]">
-                    LEARNING OUTCOMES
-                  </h3>
-                  <p className="text-white/80 leading-relaxed font-light text-sm">
-                    Identifying visual features that improve learning efficacy through data-driven analysis. Processing and analyzing data with Python & R to guide learning media design decisions.
-                  </p>
-                </div>
+              <div className="mb-2">
+                <span className="text-white/50 font-mono text-sm">{'>'}</span>
+              </div>
+              <div className="ml-4">
+                <h3 className="font-black text-white mb-3 text-base uppercase tracking-[0.1em] font-mono">
+                  LEARNING OUTCOMES
+                </h3>
+                <p className="text-white/80 leading-relaxed font-light text-sm font-mono">
+                  Identifying visual features that improve learning efficacy through data-driven analysis. Processing and analyzing data with Python & R to guide learning media design decisions.
+                </p>
               </div>
             </motion.div>
 
@@ -143,7 +143,7 @@ export function EyeTrackingSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ y: -4 }}
-                className="p-6 border-2 border-white hover:bg-white hover:text-black transition-all block group"
+                className="p-6 hover:bg-white hover:text-black transition-all block group"
               >
                 <div className="mb-3">
                   <span className="text-xs font-medium text-white/60 uppercase tracking-[0.1em]">

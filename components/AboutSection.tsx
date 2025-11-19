@@ -48,7 +48,7 @@ export function AboutSection() {
             <div className="relative group">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="aspect-square bg-white border-2 border-white overflow-hidden relative"
+                className="aspect-square bg-white overflow-hidden relative"
               >
                 <Image
                   src="/profile-photo.jpg"
@@ -67,10 +67,13 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="md:col-span-3 space-y-12"
+            className="md:col-span-3"
           >
-            <div className="space-y-6">
-              <p className="text-base text-white/80 leading-relaxed font-light">
+            <div className="mb-2">
+              <span className="text-white/50 font-mono text-sm">{'>'}</span>
+            </div>
+            <div className="ml-4">
+              <p className="text-base text-white/80 leading-relaxed font-light font-mono">
                 Cognitive Science student at UC Berkeley, double-minoring in <span className="font-medium text-white">Data Science</span> & <span className="font-medium text-white">Statistics</span>, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part <span className="italic">'let's try it and see'</span>, I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
               </p>
             </div>

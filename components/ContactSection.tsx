@@ -101,10 +101,12 @@ export function ContactSection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ x: 4 }}
-                  className="block p-6 bg-black border-2 border-white hover:bg-white hover:text-black transition-all group font-mono"
+                  className="block p-6 bg-black hover:bg-white hover:text-black transition-all group font-mono"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="mb-2">
                     <span className="text-white/50 group-hover:text-black transition-colors font-mono">{'>'}</span>
+                  </div>
+                  <div className="ml-4 flex items-center gap-4">
                     <Icon className="w-5 h-5 text-white group-hover:text-black transition-colors" />
                     <div className="flex-1">
                       <div className="font-black text-white group-hover:text-black mb-1 text-xs uppercase tracking-[0.15em]">

@@ -72,48 +72,53 @@ export function CreativeSection() {
               className="mb-16 last:mb-0"
             >
               <div>
-                <div className="flex items-baseline gap-4 mb-4 flex-wrap">
-                  <h2 className="text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.02em' }}>
-                    {work.org}
-                  </h2>
-                  <span className="text-xs text-white/40 uppercase tracking-[0.15em] font-light">
-                    {work.period}
-                  </span>
+                <div className="mb-2">
+                  <span className="text-white/50 font-mono text-sm">{'>'}</span>
                 </div>
-                <p className="text-xs text-white/60 uppercase tracking-[0.15em] mb-6 font-light">
-                  {work.role}
-                </p>
-                <p className="text-base text-white/80 leading-relaxed font-light max-w-3xl mb-6">
-                  {work.description}
-                </p>
-                {work.website && (
-                  <a
-                    href={`https://${work.website}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mb-6 text-white hover:text-white/70 transition-colors text-xs uppercase tracking-[0.15em] font-light"
-                  >
-                    {work.website}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
-                
-                {/* Links */}
-                <div className="flex flex-wrap gap-4 mt-8">
-                  {work.embeds.map((embed, i) => (
-                    <motion.a
-                      key={i}
-                      href={embed.url}
+                <div className="ml-4 space-y-4">
+                  <div className="flex items-baseline gap-4 flex-wrap">
+                    <h2 className="text-3xl md:text-4xl font-black text-white font-mono" style={{ letterSpacing: '-0.02em' }}>
+                      {work.org}
+                    </h2>
+                    <span className="text-xs text-white/40 uppercase tracking-[0.15em] font-light font-mono">
+                      {work.period}
+                    </span>
+                  </div>
+                  <p className="text-xs text-white/60 uppercase tracking-[0.15em] font-light font-mono">
+                    {work.role}
+                  </p>
+                  <p className="text-base text-white/80 leading-relaxed font-light max-w-3xl font-mono">
+                    {work.description}
+                  </p>
+                  {work.website && (
+                    <a
+                      href={`https://${work.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ x: 2, y: -2 }}
-                      onHoverStart={() => setHoveredItem(`${work.org}-${i}`)}
-                      onHoverEnd={() => setHoveredItem(null)}
-                      className="px-6 py-2.5 border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all text-xs uppercase tracking-[0.15em] text-white font-medium"
+                      className="inline-flex items-center gap-2 text-white hover:text-white/70 transition-colors text-xs uppercase tracking-[0.15em] font-light font-mono"
                     >
-                      {embed.label}
-                    </motion.a>
-                  ))}
+                      {work.website}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                  
+                  {/* Links */}
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    {work.embeds.map((embed, i) => (
+                      <motion.a
+                        key={i}
+                        href={embed.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ x: 2, y: -2 }}
+                        onHoverStart={() => setHoveredItem(`${work.org}-${i}`)}
+                        onHoverEnd={() => setHoveredItem(null)}
+                        className="px-6 py-2.5 bg-white text-black hover:bg-white/80 transition-all text-xs uppercase tracking-[0.15em] font-black font-mono"
+                      >
+                        {embed.label}
+                      </motion.a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

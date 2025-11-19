@@ -183,7 +183,7 @@ export function ExperienceSection() {
                   whileHover={{ scale: 1.02 }}
                   className="mt-6 inline-block"
                 >
-                  <button className="px-8 py-4 bg-white text-black border-2 border-white hover:bg-black hover:text-white transition-all text-xs uppercase tracking-[0.15em] font-black font-mono">
+                  <button className="px-8 py-4 bg-white text-black hover:bg-white/80 transition-all text-xs uppercase tracking-[0.15em] font-black font-mono">
                     Click here to see poster
                     <ExternalLink className="w-4 h-4 inline-block ml-2" />
                   </button>

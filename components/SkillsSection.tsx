@@ -109,7 +109,7 @@ export function SkillsSection() {
                         scale: 1.05,
                         y: -2,
                       }}
-                      className="px-4 py-2 bg-white text-black text-xs font-black uppercase tracking-widest cursor-default border-2 border-white font-mono"
+                      className="px-4 py-2 bg-white text-black text-xs font-black uppercase tracking-widest cursor-default font-mono"
                     >
                       {skill}
                     </motion.span>

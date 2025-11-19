@@ -115,30 +115,41 @@ export function Navigation() {
                   onChange={(e) => {
                     const lang = e.target.value as "en" | "es" | "de";
                     document.documentElement.lang = lang;
-                    // Trigger page translation
+                    // Trigger page translation using Google Translate
                     if (lang !== "en") {
                       // Use Google Translate widget
-                      const script = document.createElement("script");
-                      script.src = `https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit`;
-                      script.async = true;
-                      if (!window.google?.translate) {
+                      const existingScript = document.querySelector('script[src*="translate.google.com"]');
+                      if (!existingScript) {
+                        const script = document.createElement("script");
+                        script.src = `https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit`;
+                        script.async = true;
                         document.head.appendChild(script);
                       }
                       setTimeout(() => {
-                        if (window.google?.translate?.TranslateElement) {
-                          new window.google.translate.TranslateElement(
-                            { pageLanguage: "en", includedLanguages: "es,de", layout: 0 },
-                            "google_translate_element"
-                          );
-                          const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-                          if (select) select.value = lang === "es" ? "es" : "de";
-                          select?.dispatchEvent(new Event("change"));
+                        const google = (window as any).google;
+                        if (google?.translate?.TranslateElement) {
+                          const element = document.getElementById("google_translate_element");
+                          if (element && !element.querySelector(".goog-te-combo")) {
+                            new google.translate.TranslateElement(
+                              { pageLanguage: "en", includedLanguages: "es,de", layout: 0 },
+                              "google_translate_element"
+                            );
+                          }
+                          setTimeout(() => {
+                            const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+                            if (select) {
+                              select.value = lang === "es" ? "es" : "de";
+                              select.dispatchEvent(new Event("change"));
+                            }
+                          }, 200);
                         }
                       }, 100);
                     } else {
                       // Remove translation
                       const frame = document.querySelector(".goog-te-banner-frame");
                       if (frame) frame.remove();
+                      const widget = document.querySelector(".goog-te-banner-frame");
+                      if (widget) widget.remove();
                       location.reload();
                     }
                   }}

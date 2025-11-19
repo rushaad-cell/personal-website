@@ -72,7 +72,7 @@ export function EducationSection() {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span className="text-white/50 font-mono text-sm">></span>
+              <span className="text-white/50 font-mono text-sm">{'>'}</span>
               <h3 className="text-2xl font-black text-white uppercase tracking-tight font-mono">
                 Specializations
               </h3>
@@ -91,7 +91,7 @@ export function EducationSection() {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
           >
             <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-6 font-mono" style={{ textAlign: 'center', width: '100%' }}>
-              <span className="text-white/50">></span> Relevant Coursework
+              <span className="text-white/50">{'>'}</span> Relevant Coursework
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', maxWidth: '48rem', width: '100%', margin: '0 auto', justifyContent: 'center', justifyItems: 'center' }}>
               {[

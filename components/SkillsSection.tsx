@@ -86,7 +86,7 @@ export function SkillsSection() {
                 {/* Category Header */}
                 <div>
                   <div className="mb-2">
-                    <span className="text-white/50 font-mono text-sm">></span>
+                    <span className="text-white/50 font-mono text-sm">{'>'}</span>
                     <h2 className="text-2xl md:text-3xl font-black text-white mb-2 uppercase tracking-tight inline-block ml-2 font-mono">
                       {category === "research" ? "Research & PM" : "Tools & Data"}
                     </h2>

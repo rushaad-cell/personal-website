@@ -97,7 +97,8 @@ export function ExperienceSection() {
               className="group"
             >
               <div className="mb-2">
-                <span className="text-white/50 font-mono text-sm">></span>
+                <span className="text-white/50 font-mono text-sm">{'>'}</span>
+              </div>
 
               {/* Content */}
               <div className="space-y-3 ml-4">

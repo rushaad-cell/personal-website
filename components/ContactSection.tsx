@@ -104,7 +104,7 @@ export function ContactSection() {
                   className="block p-6 bg-black border-2 border-white hover:bg-white hover:text-black transition-all group font-mono"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-white/50 group-hover:text-black transition-colors font-mono">></span>
+                    <span className="text-white/50 group-hover:text-black transition-colors font-mono">{'>'}</span>
                     <Icon className="w-5 h-5 text-white group-hover:text-black transition-colors" />
                     <div className="flex-1">
                       <div className="font-black text-white group-hover:text-black mb-1 text-xs uppercase tracking-[0.15em]">

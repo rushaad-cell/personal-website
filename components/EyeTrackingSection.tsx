@@ -10,10 +10,10 @@ export function EyeTrackingSection() {
 
   const papers = [
     {
-      title: "Audience-Tuning and Saying-is-Believing Effects in the Context of Social Media",
-      authors: "Mistry, R., Heyveld, L., Bittner, D., Avilla, H., Cushman, S., Storm, B.",
-      year: "2023",
-      description: "Investigating how digital information sharing and audience framing influence autobiographical memory distortion.",
+      title: "Bright shiny garbage: Video content shown to low-income children is characterized by higher flicker",
+      authors: "Shepherd, Sarah Stolp; Yang, Huiwen Alex; Kidd, Celeste",
+      year: "2025",
+      description: "Research examining video content characteristics shown to low-income children, focusing on flicker patterns and their implications.",
       url: "https://escholarship.org/uc/item/6wk8j6fv",
     },
     {
@@ -90,14 +90,9 @@ export function EyeTrackingSection() {
                   <h3 className="font-black text-black dark:text-white mb-2 text-lg uppercase tracking-tight">
                     Computational Modeling
                   </h3>
-                  <div className="text-black/60 dark:text-white/60 leading-relaxed font-light space-y-3">
-                    <p>
-                      Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy.
-                    </p>
-                    <p>
-                      Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
-                    </p>
-                  </div>
+                  <p className="text-black/60 dark:text-white/60 leading-relaxed font-light">
+                    Conducting research under Dr. Celeste Kidd investigating the cognitive mechanisms underlying children's learning using Eyelink eye-tracking and PsychoPy. Current projects examine childrens interaction with online educational media, leveraging computational models of attention, salience, and perceptual cue processing to identify features that drive engagement and measurable learning outcomes.
+                  </p>
                 </div>
               </div>
             </motion.div>

@@ -47,7 +47,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="space-y-24">
+        <div className="space-y-32">
           {projects.map((project, index) => (
             <motion.div
               key={index}

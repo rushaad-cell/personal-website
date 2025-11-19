@@ -90,7 +90,7 @@ export function EyeTrackingSection() {
           >
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
+              className="p-6 border border-black/20 dark:border-white/20"
             >
               <div className="flex items-start gap-4 mb-4">
                 <Brain className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />
@@ -107,7 +107,7 @@ export function EyeTrackingSection() {
 
             <motion.div
               whileHover={{ scale: 1.01, x: 4 }}
-              className="p-6 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
+              className="p-6 border border-black/20 dark:border-white/20"
             >
               <div className="flex items-start gap-4">
                 <TrendingUp className="w-5 h-5 text-black dark:text-white mt-1 flex-shrink-0" />

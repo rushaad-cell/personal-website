@@ -38,7 +38,9 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navigation />
-          {children}
+          <div className="ml-20 md:ml-24">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

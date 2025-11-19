@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Eye, Brain, TrendingUp, BookOpen } from "lucide-react";
+import { Eye, Brain, TrendingUp, BookOpen, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
 export function EyeTrackingSection() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [hoveredPaper, setHoveredPaper] = useState<number | null>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -130,177 +130,285 @@ export function EyeTrackingSection() {
       authors: "Kidd Lab Research",
       year: "2025",
       description: "Investigating how visual features influence learning outcomes through eye-tracking analysis.",
+      emoji: "👁️",
     },
     {
       title: "Computational Modeling of Gaze Patterns",
       authors: "Various Authors",
       year: "2024",
       description: "Advanced methods for analyzing and predicting visual attention patterns.",
+      emoji: "🧠",
     },
     {
       title: "Eye-Tracking in Educational Media Design",
       authors: "Research Community",
       year: "2023-2025",
       description: "Best practices for using eye-tracking data to improve educational content design.",
+      emoji: "📚",
     },
   ];
 
   return (
-    <section id="eye-tracking" className="py-24 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen py-24 bg-white dark:bg-black relative overflow-hidden">
+      {/* Quirky Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-3 h-3 border-2 border-black/10 dark:border-white/10 rounded-full"
+            initial={{
+              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
+            }}
+            animate={{
+              rotate: 360,
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 4,
+              repeat: Infinity,
+              delay: Math.random() * 3,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        {/* Quirky Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-20 text-center"
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Eye className="w-6 h-6 text-black dark:text-white" />
-            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
-              Eye-Tracking Research
-            </h2>
-          </div>
-          <p className="text-lg text-black/70 dark:text-white/70 max-w-3xl mx-auto">
-            Researching children's visual attention patterns and learning outcomes in digital media contexts via eye-tracking and computational modeling.
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="text-8xl mb-6 inline-block"
+          >
+            👁️
+          </motion.div>
+          <h1 className="text-6xl md:text-8xl font-black text-black dark:text-white leading-none mb-4">
+            Eye-Tracking Research
+          </h1>
+          <p className="text-xl text-black/60 dark:text-white/60">
+            Where I stare at screens (for science)
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
-          {/* Interactive Visualization */}
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
+          {/* Interactive Visualization - Quirky Style */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-black dark:bg-white rounded-lg p-8 relative overflow-hidden"
-            onMouseMove={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect();
-              setMousePos({
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top,
-              });
-            }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="relative"
           >
-            <svg
-              ref={svgRef}
-              className="w-full h-full text-white dark:text-black"
-              style={{ minHeight: "400px" }}
-            />
-            <div className="mt-4 text-sm text-white dark:text-black text-center">
-              <p className="font-medium mb-1">Interactive Eye-Tracking Data Visualization</p>
-              <p className="text-xs opacity-70">Gaze path, fixations, and heatmap</p>
-            </div>
-            {/* Mouse follower effect */}
             <motion.div
-              className="absolute pointer-events-none"
-              style={{
-                left: mousePos.x,
-                top: mousePos.y,
-                x: -10,
-                y: -10,
-              }}
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut",
+              whileHover={{ scale: 1.02, rotate: -1 }}
+              className="bg-black dark:bg-white rounded-3xl p-8 relative overflow-hidden border-4 border-black/20 dark:border-white/20"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                setMousePos({
+                  x: e.clientX - rect.left,
+                  y: e.clientY - rect.top,
+                });
               }}
             >
-              <div className="w-5 h-5 rounded-full border-2 border-white dark:border-black opacity-50" />
+              {/* Quirky Corner Decorations */}
+              <motion.div
+                className="absolute top-4 right-4 w-12 h-12 border-2 border-white/30 dark:border-black/30 rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute bottom-4 left-4 w-8 h-8 bg-white/10 dark:bg-black/10 rounded-full"
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+
+              <svg
+                ref={svgRef}
+                className="w-full h-full text-white dark:text-black"
+                style={{ minHeight: "400px" }}
+              />
+              <div className="mt-6 text-center">
+                <p className="font-black text-white dark:text-black mb-2 text-lg">
+                  Interactive Eye-Tracking Visualization
+                </p>
+                <p className="text-xs text-white/60 dark:text-black/60">
+                  Gaze path, fixations, and heatmap
+                </p>
+              </div>
+              {/* Mouse follower effect */}
+              <motion.div
+                className="absolute pointer-events-none"
+                style={{
+                  left: mousePos.x - 10,
+                  top: mousePos.y - 10,
+                }}
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                }}
+              >
+                <div className="w-5 h-5 rounded-full border-2 border-white/50 dark:border-black/50" />
+              </motion.div>
             </motion.div>
           </motion.div>
 
-          {/* Details */}
+          {/* Details - Quirky Layout */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="space-y-8"
           >
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <Brain className="w-6 h-6 text-black dark:text-white mt-1 flex-shrink-0" />
+            <motion.div
+              whileHover={{ scale: 1.05, x: 10 }}
+              className="p-6 bg-black/5 dark:bg-white/5 rounded-2xl border-2 border-black/10 dark:border-white/10"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  className="text-4xl flex-shrink-0"
+                >
+                  🧠
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-black dark:text-white mb-2">
+                  <h3 className="font-black text-black dark:text-white mb-2 text-xl">
                     Computational Modeling
                   </h3>
-                  <p className="text-black/70 dark:text-white/70">
+                  <p className="text-black/70 dark:text-white/70 leading-relaxed">
                     Processing and analyzing data with Python & R to identify visual features that improve learning efficacy. Collaborating with technical and research teams to interpret data and guide learning media design decisions.
                   </p>
                 </div>
               </div>
+            </motion.div>
 
+            <motion.div
+              whileHover={{ scale: 1.05, x: 10 }}
+              className="p-6 bg-black/5 dark:bg-white/5 rounded-2xl border-2 border-black/10 dark:border-white/10"
+            >
               <div className="flex items-start gap-4">
-                <TrendingUp className="w-6 h-6 text-black dark:text-white mt-1 flex-shrink-0" />
+                <motion.div
+                  animate={{ rotate: [0, -360] }}
+                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                  className="text-4xl flex-shrink-0"
+                >
+                  📈
+                </motion.div>
                 <div>
-                  <h3 className="font-semibold text-black dark:text-white mb-2">
+                  <h3 className="font-black text-black dark:text-white mb-2 text-xl">
                     Learning Outcomes
                   </h3>
-                  <p className="text-black/70 dark:text-white/70">
-                    Identifying visual features that improve learning efficacy
-                    through data-driven analysis. Processing and analyzing data with Python & R to guide learning media design decisions.
+                  <p className="text-black/70 dark:text-white/70 leading-relaxed">
+                    Identifying visual features that improve learning efficacy through data-driven analysis. Processing and analyzing data with Python & R to guide learning media design decisions.
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="pt-6 border-t border-black/10 dark:border-white/10">
-              <p className="text-sm text-black/60 dark:text-white/60 mb-2">
-                <strong className="text-black dark:text-white">Tools:</strong>{" "}
-                Python, R, Eyelink, PsychoPy
-              </p>
-              <p className="text-sm text-black/60 dark:text-white/60">
-                <strong className="text-black dark:text-white">Location:</strong>{" "}
-                Kidd Lab, UC Berkeley
-              </p>
+            <div className="pt-6 border-t-2 border-black/10 dark:border-white/10">
+              <div className="flex flex-wrap gap-3">
+                {["Python", "R", "Eyelink", "PsychoPy"].map((tool, i) => (
+                  <motion.span
+                    key={tool}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-bold"
+                  >
+                    {tool}
+                  </motion.span>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Papers I Really Like Section */}
+        {/* Papers I Really Like Section - Quirky Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
         >
-          <div className="flex items-center gap-3 mb-8">
-            <BookOpen className="w-6 h-6 text-black dark:text-white" />
-            <h3 className="text-2xl font-bold text-black dark:text-white">
+          <div className="flex items-center gap-4 mb-12">
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl"
+            >
+              📚
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white">
               Papers I Really Like
-            </h3>
+            </h2>
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="text-3xl"
+            >
+              ✨
+            </motion.div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {papers.map((paper, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ y: -4 }}
-                className="p-6 border border-black/10 dark:border-white/10 rounded-lg hover:border-black dark:hover:border-white transition-all bg-white dark:bg-black"
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + i * 0.1 }}
+                whileHover={{ scale: 1.05, rotate: -2, y: -5 }}
+                onHoverStart={() => setHoveredPaper(i)}
+                onHoverEnd={() => setHoveredPaper(null)}
+                className="p-6 border-4 border-black/10 dark:border-white/10 rounded-3xl hover:border-black dark:hover:border-white transition-all bg-white dark:bg-black relative overflow-hidden group"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <span className="text-xs font-medium text-black/60 dark:text-white/60">
-                    {paper.year}
-                  </span>
+                {/* Quirky Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 5px, currentColor 5px, currentColor 10px)`,
+                  }} />
                 </div>
-                <h4 className="font-semibold text-black dark:text-white mb-2 text-sm">
-                  {paper.title}
-                </h4>
-                <p className="text-xs text-black/60 dark:text-white/60 mb-3">
-                  {paper.authors}
-                </p>
-                <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed">
-                  {paper.description}
-                </p>
+
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <motion.div
+                      animate={{
+                        rotate: hoveredPaper === i ? 360 : 0,
+                        scale: hoveredPaper === i ? 1.3 : 1,
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="text-4xl"
+                    >
+                      {paper.emoji}
+                    </motion.div>
+                    <span className="text-xs font-bold text-black/60 dark:text-white/60 bg-black/5 dark:bg-white/5 px-3 py-1 rounded-full">
+                      {paper.year}
+                    </span>
+                  </div>
+                  <h4 className="font-black text-black dark:text-white mb-2 text-lg leading-tight">
+                    {paper.title}
+                  </h4>
+                  <p className="text-xs text-black/60 dark:text-white/60 mb-3 font-medium">
+                    {paper.authors}
+                  </p>
+                  <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                    {paper.description}
+                  </p>
+                </div>
+
+                {/* Quirky Corner Decoration */}
+                {hoveredPaper === i && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute top-4 right-4 w-6 h-6 border-2 border-black dark:border-white rounded-full"
+                  />
+                )}
               </motion.div>
             ))}
           </div>

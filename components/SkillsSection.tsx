@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, BarChart3 } from "lucide-react";
+import { useState } from "react";
 
 export function SkillsSection() {
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+
   const skills = {
     research: [
       "Experimental Design",
@@ -36,80 +38,128 @@ export function SkillsSection() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen py-24 bg-white dark:bg-black relative overflow-hidden">
+      {/* Quirky Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-black/10 dark:bg-white/10 rounded-full"
+            initial={{
+              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
+            }}
+            animate={{
+              y: typeof window !== 'undefined' ? [null, Math.random() * window.innerHeight] : 0,
+              x: typeof window !== 'undefined' ? [null, Math.random() * window.innerWidth] : 0,
+            }}
+            transition={{
+              duration: Math.random() * 5 + 4,
+              repeat: Infinity,
+              delay: Math.random() * 3,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        {/* Quirky Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-            Technical Skills
-          </h2>
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="text-8xl mb-6 inline-block"
+          >
+            ⚡
+          </motion.div>
+          <h1 className="text-6xl md:text-8xl font-black text-black dark:text-white leading-none mb-4">
+            Skills & Tools
+          </h1>
+          <p className="text-xl text-black/60 dark:text-white/60">
+            Things I know (and things I'm learning)
+          </p>
         </motion.div>
 
+        {/* Quirky Skills Grid */}
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <BarChart3 className="w-6 h-6 text-black dark:text-white" />
-              <h3 className="text-2xl font-bold text-black dark:text-white">
-                Research & PM
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {skills.research.map((skill, i) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-medium cursor-default"
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+          {Object.entries(skills).map(([category, items], catIndex) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: catIndex * 0.2 }}
+              onHoverStart={() => setHoveredCategory(category)}
+              onHoverEnd={() => setHoveredCategory(null)}
+              className="relative"
+            >
+              <motion.div
+                whileHover={{ scale: 1.02, rotate: -1 }}
+                className="bg-black/5 dark:bg-white/5 rounded-3xl p-8 border-2 border-black/10 dark:border-white/10 relative overflow-hidden"
+              >
+                {/* Quirky Category Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <motion.div
+                    animate={{
+                      rotate: hoveredCategory === category ? 360 : 0,
+                      scale: hoveredCategory === category ? 1.2 : 1,
+                    }}
+                    transition={{ duration: 0.6 }}
+                    className="text-5xl"
+                  >
+                    {category === "research" ? "🔬" : "💻"}
+                  </motion.div>
+                  <h2 className="text-3xl font-black text-black dark:text-white">
+                    {category === "research" ? "Research & PM" : "Tools & Data"}
+                  </h2>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <Code className="w-6 h-6 text-black dark:text-white" />
-              <h3 className="text-2xl font-bold text-black dark:text-white">
-                Tools & Data
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {skills.tools.map((tool, i) => (
-                <motion.span
-                  key={tool}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-medium cursor-default"
-                >
-                  {tool}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+                {/* Quirky Skills List */}
+                <div className="flex flex-wrap gap-3">
+                  {items.map((skill, i) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        delay: catIndex * 0.2 + i * 0.03,
+                        type: "spring",
+                        stiffness: 200,
+                      }}
+                      whileHover={{
+                        scale: 1.1,
+                        rotate: Math.random() * 10 - 5,
+                        zIndex: 10,
+                      }}
+                      className="px-5 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-bold cursor-default relative"
+                    >
+                      {skill}
+                      {hoveredCategory === category && (
+                        <motion.span
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="absolute -top-1 -right-1 text-xs"
+                        >
+                          ✨
+                        </motion.span>
+                      )}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* Quirky Corner Decoration */}
+                <motion.div
+                  className="absolute top-4 right-4 w-16 h-16 border-2 border-black/20 dark:border-white/20 rounded-full"
+                  animate={{
+                    rotate: hoveredCategory === category ? 180 : 0,
+                  }}
+                />
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

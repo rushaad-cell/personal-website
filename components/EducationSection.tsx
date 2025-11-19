@@ -32,37 +32,35 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto text-center"
+          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative max-w-4xl mx-auto"
         >
-          <div className="mb-12">
-            <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
-                B.A in Cognitive Science
-              </h2>
-              <p className="text-2xl text-black/70 dark:text-white/70 font-light mb-4">
-                University of California, Berkeley
-              </p>
-              <div className="flex items-center justify-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
-                <span>Berkeley, CA</span>
-                <span>•</span>
-                <span>2023-2027</span>
-              </div>
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
+              B.A in Cognitive Science
+            </h2>
+            <p className="text-2xl text-black/70 dark:text-white/70 font-light mb-4">
+              University of California, Berkeley
+            </p>
+            <div className="flex items-center justify-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
+              <span>Berkeley, CA</span>
+              <span>•</span>
+              <span>2023-2027</span>
+            </div>
 
-              {/* Minors */}
-              <div className="flex flex-wrap gap-3 mb-12 justify-center">
-                {["Cognitive Science", "Data Science", "Statistics"].map((minor, i) => (
-                  <motion.span
-                    key={minor}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.05, type: "spring" }}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest border-2 border-black dark:border-white"
-                  >
-                    {minor}
-                  </motion.span>
-                ))}
-              </div>
+            {/* Minors */}
+            <div className="flex flex-wrap gap-3 mb-12 justify-center">
+              {["Cognitive Science", "Data Science", "Statistics"].map((minor, i) => (
+                <motion.span
+                  key={minor}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.05, type: "spring" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest border-2 border-black dark:border-white"
+                >
+                  {minor}
+                </motion.span>
+              ))}
             </div>
           </div>
 
@@ -71,7 +69,7 @@ export function EducationSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="pt-12 border-t border-white/10 dark:border-black/10 mb-12"
+            className="pt-12 border-t border-white/10 dark:border-black/10 mb-12 text-center"
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               <Award className="w-5 h-5 text-black dark:text-white" />
@@ -79,7 +77,7 @@ export function EducationSection() {
                 Specializations
               </h3>
             </div>
-            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light text-center">
+            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light max-w-2xl mx-auto">
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
           </motion.div>
@@ -94,7 +92,7 @@ export function EducationSection() {
             <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6 text-center">
               Relevant Coursework
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
               {[
                 { code: "COGSCI 132", title: "Rhythms of the Brain: from Neuronal Communication to Function" },
                 { code: "PSYCH C127", title: "Cognitive Neuroscience" },
@@ -116,7 +114,7 @@ export function EducationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.05 }}
-                  className="p-4 border border-black/20 dark:border-white/20"
+                  className="p-4 border border-black/20 dark:border-white/20 text-center"
                 >
                   <div className="mb-2">
                     <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">

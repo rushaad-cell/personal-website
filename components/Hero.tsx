@@ -1,25 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const quirkyFacts = [
-  "I once debugged code in my dreams",
-  "I measure time in coffee cups",
-  "I believe data tells stories",
-  "I'm part human, part algorithm",
+const statements = [
+  "Bridging behavioral sciences and product thinking",
+  "Translating human data into insights",
+  "Part data-wrangler, part design thinker",
+  "Experimental design meets data-driven strategy",
 ];
 
 export function Hero() {
-  const [currentFact, setCurrentFact] = useState(0);
+  const [currentStatement, setCurrentStatement] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentFact((prev) => (prev + 1) % quirkyFacts.length);
-    }, 3000);
+      setCurrentStatement((prev) => (prev + 1) % statements.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -33,44 +33,26 @@ export function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-black">
-      {/* Quirky Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-black dark:bg-white rounded-full"
-            initial={{
-              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
-              opacity: 0.1,
-            }}
-            animate={{
-              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+      {/* Minimal Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
+        }} />
       </div>
 
-      {/* Mouse Follower */}
+      {/* Subtle Mouse Follower */}
       <motion.div
-        className="fixed w-32 h-32 rounded-full border-2 border-black dark:border-white pointer-events-none z-0"
+        className="fixed w-96 h-96 rounded-full border border-black/5 dark:border-white/5 pointer-events-none z-0"
         style={{
-          left: mousePos.x - 64,
-          top: mousePos.y - 64,
+          left: mousePos.x - 192,
+          top: mousePos.y - 192,
         }}
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
+          scale: [1, 1.1, 1],
+          opacity: [0.03, 0.06, 0.03],
         }}
         transition={{
-          duration: 2,
+          duration: 3,
           repeat: Infinity,
         }}
       />
@@ -82,78 +64,48 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          {/* Quirky Greeting */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="mb-8"
-          >
-            <span className="text-6xl md:text-8xl font-black text-black dark:text-white inline-block transform hover:rotate-12 transition-transform cursor-default">
-              👋
-            </span>
-          </motion.div>
-
-          {/* Name with quirky styling */}
+          {/* Name */}
           <motion.h1
-            className="text-7xl md:text-9xl font-black mb-6 text-black dark:text-white leading-none"
+            className="text-8xl md:text-[12rem] font-black mb-12 text-black dark:text-white leading-none tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
           >
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              R
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              U
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              S
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              H
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              A
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              A
-            </span>
-            <span className="inline-block hover:scale-110 transition-transform cursor-default">
-              D
-            </span>
+            RUSHAAD
+            <br />
+            MISTRY
           </motion.h1>
 
-          {/* Rotating Quirky Fact */}
+          {/* Rotating Statement */}
           <motion.div
-            key={currentFact}
-            initial={{ opacity: 0, y: 10, rotateX: -90 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            exit={{ opacity: 0, y: -10, rotateX: 90 }}
-            className="mb-8 h-16 flex items-center justify-center"
+            key={currentStatement}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="mb-16 h-8 flex items-center justify-center"
           >
-            <p className="text-2xl md:text-3xl font-bold text-black/60 dark:text-white/60">
-              {quirkyFacts[currentFact]}
+            <p className="text-lg md:text-xl text-black/50 dark:text-white/50 uppercase tracking-widest font-light">
+              {statements[currentStatement]}
             </p>
           </motion.div>
 
-          {/* Subtitle with quirky layout */}
+          {/* Subtitle */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mb-12"
+            className="mb-16"
           >
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xl md:text-2xl">
-              <span className="font-bold text-black dark:text-white">Cognitive Science</span>
-              <span className="text-black/40 dark:text-white/40">×</span>
-              <span className="font-bold text-black dark:text-white">Data Science</span>
-              <span className="text-black/40 dark:text-white/40">×</span>
-              <span className="font-bold text-black dark:text-white">Product Strategy</span>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-widest text-black/40 dark:text-white/40 font-light">
+              <span>Cognitive Science</span>
+              <span className="text-black/20 dark:text-white/20">×</span>
+              <span>Data Science</span>
+              <span className="text-black/20 dark:text-white/20">×</span>
+              <span>Product Strategy</span>
             </div>
           </motion.div>
 
-          {/* Quirky CTA */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -162,50 +114,48 @@ export function Hero() {
           >
             <Link href="/about">
               <motion.button
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold text-lg flex items-center gap-2 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium text-sm uppercase tracking-widest border-2 border-black dark:border-white hover:bg-transparent hover:text-black dark:hover:text-white transition-all"
               >
-                Explore My World
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Explore
+                <ArrowRight className="w-4 h-4 inline-block ml-2" />
               </motion.button>
             </Link>
             <Link href="/projects">
               <motion.button
-                whileHover={{ scale: 1.05, rotate: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white rounded-full font-bold text-lg flex items-center gap-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white font-medium text-sm uppercase tracking-widest hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
               >
-                <Sparkles className="w-5 h-5" />
-                See Projects
+                Projects
               </motion.button>
             </Link>
           </motion.div>
 
-          {/* Quirky Stats */}
+          {/* Minimal Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-24 grid grid-cols-3 gap-8 max-w-2xl mx-auto border-t border-black/10 dark:border-white/10 pt-12"
           >
             {[
               { label: "Research Papers", value: "3+" },
-              { label: "Cups of Coffee", value: "∞" },
-              { label: "Lines of Code", value: "10k+" },
+              { label: "Years Experience", value: "5+" },
+              { label: "Projects", value: "10+" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1 + i * 0.1 }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
                 className="text-center"
               >
-                <div className="text-4xl font-black text-black dark:text-white mb-2">
+                <div className="text-3xl font-black text-black dark:text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-black/60 dark:text-white/60 font-medium">
+                <div className="text-xs text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
                   {stat.label}
                 </div>
               </motion.div>

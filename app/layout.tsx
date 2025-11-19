@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { Navigation } from "@/components/Navigation";
+import { EasterEggSection } from "@/components/EasterEggSection";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,9 +39,10 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navigation />
-          <div className="ml-20 md:ml-24">
+          <div className="md:ml-24">
             {children}
           </div>
+          <EasterEggSection />
         </ThemeProvider>
       </body>
     </html>

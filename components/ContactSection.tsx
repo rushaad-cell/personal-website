@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Linkedin, Send, MessageCircle } from "lucide-react";
+import { Mail, Linkedin, Send } from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -11,7 +11,6 @@ export function ContactSection() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [hoveredContact, setHoveredContact] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +44,6 @@ export function ContactSection() {
       value: "rushaad@berkeley.edu",
       href: "mailto:rushaad@berkeley.edu",
       icon: Mail,
-      emoji: "📧",
     },
     {
       type: "phone",
@@ -53,7 +51,6 @@ export function ContactSection() {
       value: "(650) 863-4535",
       href: "tel:+16508634535",
       icon: Mail,
-      emoji: "📞",
     },
     {
       type: "linkedin",
@@ -61,61 +58,41 @@ export function ContactSection() {
       value: "Connect with me",
       href: "https://www.linkedin.com/in/rushaad-mistry-43507a1b0/",
       icon: Linkedin,
-      emoji: "💼",
     },
   ];
 
   return (
-    <section className="min-h-screen py-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Quirky Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 border border-black/10 dark:border-white/10 rounded-full"
-            initial={{
-              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
-            }}
-            animate={{
-              rotate: 360,
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+    <section className="min-h-screen py-32 bg-white dark:bg-black relative overflow-hidden">
+      {/* Minimal Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 20px)`,
+        }} />
       </div>
 
       <div className="max-w-5xl mx-auto px-8 relative z-10">
-        {/* Quirky Header */}
+        {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
+          className="mb-24 text-center"
         >
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="text-8xl mb-6 inline-block"
-          >
-            📬
-          </motion.div>
-          <h1 className="text-6xl md:text-8xl font-black text-black dark:text-white leading-none mb-4">
-            Let's Connect
-          </h1>
-          <p className="text-xl text-black/60 dark:text-white/60">
-            I don't bite (promise)
+          <div className="flex items-baseline justify-center gap-6 mb-4">
+            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+              CONTACT
+            </h1>
+            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+          </div>
+          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+            Get In Touch
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Methods - Quirky Cards */}
+        <div className="grid md:grid-cols-2 gap-16">
+          {/* Contact Methods */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             className="space-y-4"
           >
@@ -130,39 +107,28 @@ export function ContactSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  whileHover={{ scale: 1.05, x: 10, rotate: -2 }}
-                  onHoverStart={() => setHoveredContact(method.type)}
-                  onHoverEnd={() => setHoveredContact(null)}
-                  className="block p-6 bg-black/5 dark:bg-white/5 rounded-2xl border-2 border-transparent hover:border-black dark:hover:border-white transition-all group"
+                  whileHover={{ x: 4 }}
+                  className="block p-6 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-black dark:hover:border-white transition-all group"
                 >
                   <div className="flex items-center gap-4">
-                    <motion.div
-                      animate={{
-                        rotate: hoveredContact === method.type ? 360 : 0,
-                        scale: hoveredContact === method.type ? 1.2 : 1,
-                      }}
-                      className="text-4xl"
-                    >
-                      {method.emoji}
-                    </motion.div>
+                    <Icon className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-black dark:group-hover:text-white transition-colors" />
                     <div className="flex-1">
-                      <div className="font-bold text-black dark:text-white mb-1">
+                      <div className="font-medium text-black dark:text-white mb-1 text-sm uppercase tracking-widest">
                         {method.label}
                       </div>
-                      <div className="text-sm text-black/60 dark:text-white/60">
+                      <div className="text-sm text-black/50 dark:text-white/50 font-light">
                         {method.value}
                       </div>
                     </div>
-                    <Icon className="w-5 h-5 text-black/40 dark:text-white/40 group-hover:text-black dark:group-hover:text-white transition-colors" />
                   </div>
                 </motion.a>
               );
             })}
           </motion.div>
 
-          {/* Quirky Form */}
+          {/* Form */}
           <motion.form
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             onSubmit={handleSubmit}
             className="space-y-6"
@@ -170,7 +136,7 @@ export function ContactSection() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-bold text-black dark:text-white mb-2"
+                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
               >
                 Name
               </label>
@@ -182,13 +148,13 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border-2 border-black/20 dark:border-white/20 rounded-2xl text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-medium"
+                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-light"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-bold text-black dark:text-white mb-2"
+                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
               >
                 Email
               </label>
@@ -200,13 +166,13 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border-2 border-black/20 dark:border-white/20 rounded-2xl text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-medium"
+                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors font-light"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-bold text-black dark:text-white mb-2"
+                className="block text-xs font-medium text-black dark:text-white mb-2 uppercase tracking-widest"
               >
                 Message
               </label>
@@ -218,29 +184,28 @@ export function ContactSection() {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border-2 border-black/20 dark:border-white/20 rounded-2xl text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors resize-none font-medium"
+                className="w-full px-6 py-4 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors resize-none font-light"
               />
             </div>
             <motion.button
               type="submit"
               disabled={status === "sending"}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-8 py-5 bg-black dark:bg-white text-white dark:text-black rounded-2xl font-black text-lg hover:opacity-80 transition-opacity disabled:opacity-50 flex items-center justify-center gap-3"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full px-8 py-5 bg-black dark:bg-white text-white dark:text-black font-medium text-sm uppercase tracking-widest border-2 border-black dark:border-white hover:bg-transparent hover:text-black dark:hover:text-white transition-all disabled:opacity-50 flex items-center justify-center gap-3"
             >
               {status === "sending" ? (
                 <>
                   <motion.span
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                  >
-                    ⏳
-                  </motion.span>
+                    className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
+                  />
                   Sending...
                 </>
               ) : (
                 <>
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4" />
                   Send Message
                 </>
               )}
@@ -249,18 +214,18 @@ export function ContactSection() {
               <motion.p
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-sm text-green-600 dark:text-green-400 font-bold text-center"
+                className="text-sm text-black/60 dark:text-white/60 font-light text-center"
               >
-                ✨ Message sent successfully!
+                Message sent successfully
               </motion.p>
             )}
             {status === "error" && (
               <motion.p
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-sm text-red-600 dark:text-red-400 font-bold text-center"
+                className="text-sm text-black/60 dark:text-white/60 font-light text-center"
               >
-                ❌ Failed to send. Please try again.
+                Failed to send. Please try again.
               </motion.p>
             )}
           </motion.form>

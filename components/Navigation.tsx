@@ -29,12 +29,12 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { href: "/", label: "Home", icon: Home, emoji: "🏠" },
-    { href: "/about", label: "About", icon: User, emoji: "👤" },
-    { href: "/projects", label: "Projects", icon: Sparkles, emoji: "✨" },
-    { href: "/work", label: "Work", icon: Briefcase, emoji: "💼" },
-    { href: "/skills", label: "Skills", icon: Code, emoji: "⚡" },
-    { href: "/contact", label: "Contact", icon: Mail, emoji: "📧" },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/about", label: "About", icon: User },
+    { href: "/projects", label: "Projects", icon: Sparkles },
+    { href: "/work", label: "Work", icon: Briefcase },
+    { href: "/skills", label: "Skills", icon: Code },
+    { href: "/contact", label: "Contact", icon: Mail },
   ];
 
   const isActive = (href: string) => {
@@ -44,27 +44,27 @@ export function Navigation() {
 
   return (
     <>
-      {/* Quirky Side Navigation */}
+      {/* Minimal Side Navigation */}
       <motion.nav
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
-        className="fixed left-0 top-0 bottom-0 z-50 w-20 md:w-24 flex flex-col items-center py-8 border-r border-black/10 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-xl"
+        className="fixed left-0 top-0 bottom-0 z-50 w-20 md:w-24 flex flex-col items-center py-12 border-r border-black/5 dark:border-white/5 bg-white/80 dark:bg-black/80 backdrop-blur-xl"
       >
         <motion.div
-          whileHover={{ rotate: 360 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2 }}
+          className="mb-12"
         >
           <Link
             href="/"
-            className="text-2xl font-black text-black dark:text-white block w-12 h-12 rounded-full bg-black dark:bg-white flex items-center justify-center hover:scale-110 transition-transform"
+            className="text-lg font-black text-black dark:text-white block w-12 h-12 rounded-full border-2 border-black dark:border-white flex items-center justify-center hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
           >
             RM
           </Link>
         </motion.div>
 
-        <div className="flex-1 flex flex-col gap-4">
+        <div className="flex-1 flex flex-col gap-2">
           {navItems.map((item, index) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -73,28 +73,28 @@ export function Navigation() {
                 key={item.href}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.1, x: 4 }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ x: 4 }}
                 className="relative"
               >
                 <Link
                   href={item.href}
                   className={cn(
-                    "block w-12 h-12 rounded-2xl flex items-center justify-center text-xl transition-all relative group",
+                    "block w-12 h-12 rounded-lg flex items-center justify-center transition-all relative group",
                     active
                       ? "bg-black dark:bg-white text-white dark:text-black"
-                      : "bg-transparent text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
+                      : "bg-transparent text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
                   )}
                 >
-                  <span className="text-2xl">{item.emoji}</span>
+                  <Icon className="w-5 h-5" />
                   {active && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute -right-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-black dark:bg-white rounded-full"
+                      className="absolute -right-1 top-1/2 -translate-y-1/2 w-0.5 h-8 bg-black dark:bg-white"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                  <span className="absolute left-full ml-4 px-3 py-1 bg-black dark:bg-white text-white dark:text-black text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                  <span className="absolute left-full ml-4 px-3 py-1.5 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                     {item.label}
                   </span>
                 </Link>
@@ -105,16 +105,16 @@ export function Navigation() {
 
         {mounted && (
           <motion.button
-            whileHover={{ rotate: 180 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
-            className="w-12 h-12 rounded-2xl bg-black/5 dark:bg-white/5 flex items-center justify-center text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors"
+            className="w-12 h-12 rounded-lg border border-black/10 dark:border-white/10 flex items-center justify-center text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <Sun className="w-5 h-5" />
+              <Sun className="w-4 h-4" />
             ) : (
-              <Moon className="w-5 h-5" />
+              <Moon className="w-4 h-4" />
             )}
           </motion.button>
         )}
@@ -124,7 +124,7 @@ export function Navigation() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center shadow-lg"
+        className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center shadow-lg border-2 border-black dark:border-white"
         onClick={() => setIsOpen(!isOpen)}
         whileTap={{ scale: 0.9 }}
       >
@@ -140,7 +140,7 @@ export function Navigation() {
             exit={{ opacity: 0, y: 20 }}
             className="fixed inset-0 z-40 md:hidden bg-white dark:bg-black p-8"
           >
-            <div className="flex flex-col gap-4 mt-20">
+            <div className="flex flex-col gap-2 mt-20">
               {navItems.map((item, index) => {
                 const Icon = item.icon;
                 return (
@@ -148,20 +148,20 @@ export function Navigation() {
                     key={item.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.05 }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "flex items-center gap-4 p-4 rounded-2xl text-2xl transition-colors",
+                        "flex items-center gap-4 p-4 rounded-lg transition-colors uppercase tracking-widest text-sm",
                         isActive(item.href)
                           ? "bg-black dark:bg-white text-white dark:text-black"
                           : "bg-black/5 dark:bg-white/5 text-black dark:text-white"
                       )}
                     >
-                      <span>{item.emoji}</span>
-                      <span className="text-lg font-medium">{item.label}</span>
+                      <Icon className="w-5 h-5" />
+                      <span>{item.label}</span>
                     </Link>
                   </motion.div>
                 );

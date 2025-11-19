@@ -38,125 +38,79 @@ export function SkillsSection() {
   };
 
   return (
-    <section className="min-h-screen py-24 bg-white dark:bg-black relative overflow-hidden">
-      {/* Quirky Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-black/10 dark:bg-white/10 rounded-full"
-            initial={{
-              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
-            }}
-            animate={{
-              y: typeof window !== 'undefined' ? [null, Math.random() * window.innerHeight] : 0,
-              x: typeof window !== 'undefined' ? [null, Math.random() * window.innerWidth] : 0,
-            }}
-            transition={{
-              duration: Math.random() * 5 + 4,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
+    <section className="min-h-screen py-32 bg-white dark:bg-black relative overflow-hidden">
+      {/* Minimal Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 4px)`,
+        }} />
       </div>
 
       <div className="max-w-6xl mx-auto px-8 relative z-10">
-        {/* Quirky Header */}
+        {/* Minimal Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-20 text-center"
+          className="mb-24 text-center"
         >
-          <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="text-8xl mb-6 inline-block"
-          >
-            ⚡
-          </motion.div>
-          <h1 className="text-6xl md:text-8xl font-black text-black dark:text-white leading-none mb-4">
-            Skills & Tools
-          </h1>
-          <p className="text-xl text-black/60 dark:text-white/60">
-            Things I know (and things I'm learning)
+          <div className="flex items-baseline justify-center gap-6 mb-4">
+            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+            <h1 className="text-7xl md:text-9xl font-black text-black dark:text-white leading-none tracking-tight">
+              SKILLS
+            </h1>
+            <div className="flex-1 h-px bg-black/10 dark:bg-white/10"></div>
+          </div>
+          <p className="text-sm text-black/40 dark:text-white/40 uppercase tracking-widest font-light">
+            Research & Technical Tools
           </p>
         </motion.div>
 
-        {/* Quirky Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-12">
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 gap-16">
           {Object.entries(skills).map(([category, items], catIndex) => (
             <motion.div
               key={category}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: catIndex * 0.2 }}
+              transition={{ delay: catIndex * 0.15 }}
               onHoverStart={() => setHoveredCategory(category)}
               onHoverEnd={() => setHoveredCategory(null)}
               className="relative"
             >
               <motion.div
-                whileHover={{ scale: 1.02, rotate: -1 }}
-                className="bg-black/5 dark:bg-white/5 rounded-3xl p-8 border-2 border-black/10 dark:border-white/10 relative overflow-hidden"
+                whileHover={{ scale: 1.01 }}
+                className="space-y-8"
               >
-                {/* Quirky Category Header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <motion.div
-                    animate={{
-                      rotate: hoveredCategory === category ? 360 : 0,
-                      scale: hoveredCategory === category ? 1.2 : 1,
-                    }}
-                    transition={{ duration: 0.6 }}
-                    className="text-5xl"
-                  >
-                    {category === "research" ? "🔬" : "💻"}
-                  </motion.div>
-                  <h2 className="text-3xl font-black text-black dark:text-white">
+                {/* Category Header */}
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-black text-black dark:text-white mb-2 uppercase tracking-tight">
                     {category === "research" ? "Research & PM" : "Tools & Data"}
                   </h2>
+                  <div className="w-16 h-px bg-black dark:bg-white"></div>
                 </div>
 
-                {/* Quirky Skills List */}
+                {/* Skills List */}
                 <div className="flex flex-wrap gap-3">
                   {items.map((skill, i) => (
                     <motion.span
                       key={skill}
-                      initial={{ opacity: 0, scale: 0 }}
+                      initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{
-                        delay: catIndex * 0.2 + i * 0.03,
+                        delay: catIndex * 0.15 + i * 0.02,
                         type: "spring",
                         stiffness: 200,
                       }}
                       whileHover={{
-                        scale: 1.1,
-                        rotate: Math.random() * 10 - 5,
-                        zIndex: 10,
+                        scale: 1.05,
+                        y: -2,
                       }}
-                      className="px-5 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm font-bold cursor-default relative"
+                      className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest cursor-default border-2 border-black dark:border-white"
                     >
                       {skill}
-                      {hoveredCategory === category && (
-                        <motion.span
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="absolute -top-1 -right-1 text-xs"
-                        >
-                          ✨
-                        </motion.span>
-                      )}
                     </motion.span>
                   ))}
                 </div>
-
-                {/* Quirky Corner Decoration */}
-                <motion.div
-                  className="absolute top-4 right-4 w-16 h-16 border-2 border-black/20 dark:border-white/20 rounded-full"
-                  animate={{
-                    rotate: hoveredCategory === category ? 180 : 0,
-                  }}
-                />
               </motion.div>
             </motion.div>
           ))}

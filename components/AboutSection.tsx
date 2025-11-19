@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 const traits = [
   { label: "Data Wrangler", desc: "Python & R proficiency" },
@@ -14,7 +15,7 @@ export function AboutSection() {
   const [hoveredTrait, setHoveredTrait] = useState<number | null>(null);
 
   return (
-    <section className="min-h-screen pt-40 pb-32 bg-white dark:bg-black relative overflow-hidden">
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
@@ -53,12 +54,14 @@ export function AboutSection() {
             <div className="relative group">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white overflow-hidden"
+                className="aspect-square bg-black dark:bg-white border-2 border-black dark:border-white overflow-hidden relative"
               >
-                <img
+                <Image
                   src="/images/profile-photo.jpg"
                   alt="Rushaad Mistry"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </motion.div>
             </div>

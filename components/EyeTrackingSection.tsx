@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Brain, TrendingUp, BookOpen } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export function EyeTrackingSection() {
   const [hoveredPaper, setHoveredPaper] = useState<number | null>(null);
@@ -29,7 +30,7 @@ export function EyeTrackingSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-40 pb-32 bg-white dark:bg-black relative overflow-hidden">
+    <section className="min-h-screen pt-32 pb-24 bg-white dark:bg-black relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
@@ -67,13 +68,16 @@ export function EyeTrackingSection() {
               whileHover={{ scale: 1.01 }}
               className="bg-black dark:bg-white border-2 border-black/20 dark:border-white/20 relative overflow-hidden"
             >
-              <img
-                src="/images/eye-tracking.jpg"
-                alt="Eye-tracking visualization"
-                className="w-full h-auto"
-              />
-              <div className="p-6 bg-black dark:bg-white text-center">
-                <p className="font-black text-white dark:text-black mb-2 text-sm uppercase tracking-widest">
+              <div className="relative w-full aspect-video">
+                <Image
+                  src="/images/eye-tracking.jpg"
+                  alt="Eye-tracking visualization"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="p-4 bg-black dark:bg-white text-center">
+                <p className="font-black text-white dark:text-black mb-1 text-xs uppercase tracking-widest">
                   Eye-Tracking Data Visualization
                 </p>
                 <p className="text-xs text-white/50 dark:text-black/50 font-light">

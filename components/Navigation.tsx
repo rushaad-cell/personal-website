@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "@/lib/theme-provider";
-import { Moon, Sun, Menu, X, Home, User, Briefcase, Code, Mail, Sparkles, GraduationCap, Palette } from "lucide-react";
+import { Moon, Sun, Menu, X, Home, User, Briefcase, Code, Mail, Sparkles, GraduationCap, Palette, Languages } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -78,7 +78,7 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-8">
               {navItems.map((item, index) => {
                 const Icon = item.icon;
                 const active = isActive(item.href);
@@ -87,7 +87,7 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "px-4 py-2 text-xs font-medium uppercase tracking-widest transition-colors relative",
+                      "px-2 py-2 text-xs font-medium uppercase tracking-widest transition-colors relative",
                       active
                         ? "text-black dark:text-white"
                         : "text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white"
@@ -107,7 +107,50 @@ export function Navigation() {
             </div>
 
             {/* Controls */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
+              {/* Language Toggle */}
+              <div className="hidden md:flex items-center gap-2 border-r border-black/10 dark:border-white/10 pr-6">
+                <Languages className="w-4 h-4 text-black/50 dark:text-white/50" />
+                <select
+                  onChange={(e) => {
+                    const lang = e.target.value as "en" | "es" | "de";
+                    document.documentElement.lang = lang;
+                    // Trigger page translation
+                    if (lang !== "en") {
+                      // Use Google Translate widget
+                      const script = document.createElement("script");
+                      script.src = `https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit`;
+                      script.async = true;
+                      if (!window.google?.translate) {
+                        document.head.appendChild(script);
+                      }
+                      setTimeout(() => {
+                        if (window.google?.translate?.TranslateElement) {
+                          new window.google.translate.TranslateElement(
+                            { pageLanguage: "en", includedLanguages: "es,de", layout: 0 },
+                            "google_translate_element"
+                          );
+                          const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+                          if (select) select.value = lang === "es" ? "es" : "de";
+                          select?.dispatchEvent(new Event("change"));
+                        }
+                      }, 100);
+                    } else {
+                      // Remove translation
+                      const frame = document.querySelector(".goog-te-banner-frame");
+                      if (frame) frame.remove();
+                      location.reload();
+                    }
+                  }}
+                  className="text-xs uppercase tracking-widest bg-transparent border-none text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white cursor-pointer outline-none"
+                >
+                  <option value="en">EN</option>
+                  <option value="es">ES</option>
+                  <option value="de">DE</option>
+                </select>
+              </div>
+              <div id="google_translate_element" className="hidden"></div>
+              
               {/* Theme Toggle */}
               {mounted && (
                 <motion.button

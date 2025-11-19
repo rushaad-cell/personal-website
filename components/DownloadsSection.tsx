@@ -22,7 +22,7 @@ export function DownloadsSection() {
   ];
 
   return (
-    <section className="pt-40 pb-32 bg-black dark:bg-white relative overflow-hidden">
+    <section className="pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{

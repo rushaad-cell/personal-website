@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export function ExperienceSection() {
   const [selectedExp, setSelectedExp] = useState<number | null>(null);
@@ -64,7 +65,7 @@ export function ExperienceSection() {
   ];
 
   return (
-    <section className="min-h-screen pt-40 pb-32 bg-black dark:bg-white relative overflow-hidden">
+    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
@@ -191,13 +192,16 @@ export function ExperienceSection() {
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden"
+                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden relative"
                 >
-                  <img
-                    src="/images/research-poster.jpg"
-                    alt={pres.title}
-                    className="w-full h-auto"
-                  />
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src="/images/research-poster.jpg"
+                      alt={pres.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </motion.div>
               </motion.div>
             ))}

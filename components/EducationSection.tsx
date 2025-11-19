@@ -5,7 +5,7 @@ import { Award } from "lucide-react";
 
 export function EducationSection() {
   return (
-    <section className="min-h-screen pt-40 pb-32 bg-black dark:bg-white relative overflow-hidden">
+    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{

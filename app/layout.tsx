@@ -34,13 +34,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                if (window.google && window.google.translate) {
+                  new google.translate.TranslateElement(
+                    { pageLanguage: 'en', includedLanguages: 'es,de', layout: 0 },
+                    'google_translate_element'
+                  );
+                }
+              }
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
           <Navigation />
-          <div className="pt-20 md:pt-24">
-            <div className="h-20 md:h-24"></div>
+          <div className="pt-16 md:pt-20">
+            <div className="h-16 md:h-20"></div>
             {children}
           </div>
           <EasterEggSection />

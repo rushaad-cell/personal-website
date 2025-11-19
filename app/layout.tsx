@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navigation />
-          <div className="pt-24">
+          <div className="pt-32">
             {children}
           </div>
           <EasterEggSection />

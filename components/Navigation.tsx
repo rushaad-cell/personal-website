@@ -2,20 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "@/lib/theme-provider";
-import { Moon, Sun, Menu, X, Globe } from "lucide-react";
-import { useTranslations, useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { locales, type Locale } from "@/i18n";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const t = useTranslations("nav");
-  const locale = useLocale() as Locale;
-  const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,18 +18,13 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const switchLocale = (newLocale: Locale) => {
-    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
-    router.push(`/${newLocale}${pathWithoutLocale}`);
-  };
-
   const navItems = [
-    { href: "#about", label: t("about") },
-    { href: "#projects", label: t("projects") },
-    { href: "#experience", label: t("experience") },
-    { href: "#education", label: t("education") },
-    { href: "#skills", label: t("skills") },
-    { href: "#contact", label: t("contact") },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#experience", label: "Experience" },
+    { href: "#education", label: "Education" },
+    { href: "#skills", label: "Skills" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -51,7 +39,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a
-            href={`/${locale}#`}
+            href="#"
             className="text-xl font-bold text-black dark:text-white"
           >
             RM
@@ -62,7 +50,7 @@ export function Navigation() {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={`/${locale}${item.href}`}
+                href={item.href}
                 className="text-sm font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors"
               >
                 {item.label}
@@ -72,27 +60,6 @@ export function Navigation() {
 
           {/* Controls */}
           <div className="flex items-center gap-4">
-            {/* Language Switcher */}
-            <div className="relative group">
-              <button className="p-2 text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-colors">
-                <Globe className="w-5 h-5" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white dark:bg-black border border-black/10 dark:border-white/10 rounded-lg shadow-lg py-1 min-w-[120px]">
-                {locales.map((loc) => (
-                  <button
-                    key={loc}
-                    onClick={() => switchLocale(loc)}
-                    className={cn(
-                      "w-full text-left px-4 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/5 transition-colors",
-                      locale === loc && "font-semibold"
-                    )}
-                  >
-                    {loc.toUpperCase()}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -123,7 +90,7 @@ export function Navigation() {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={`/${locale}${item.href}`}
+                href={item.href}
                 onClick={() => setIsOpen(false)}
                 className="block px-4 py-2 text-sm font-medium text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-colors"
               >
@@ -136,4 +103,3 @@ export function Navigation() {
     </nav>
   );
 }
-

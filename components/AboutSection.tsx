@@ -1,12 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
 
 export function AboutSection() {
-  const t = useTranslations("about");
-
   return (
     <section id="about" className="py-24 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,14 +16,14 @@ export function AboutSection() {
           <div className="flex items-center gap-3 mb-8">
             <User className="w-8 h-8 text-black dark:text-white" />
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
-              {t("title")}
+              About
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-black/80 dark:text-white/80">
-                {t("description")}
+                Cognitive Science student at UC Berkeley, double-minoring in Data Science & Statistics, specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments. Part data-wrangler, part design thinker, and part 'let's try it and see', I work to bridge behavioral sciences and product thinking to translate human data into insights for innovation.
               </p>
             </div>
 
@@ -69,4 +66,3 @@ export function AboutSection() {
     </section>
   );
 }
-

@@ -1,12 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 export function Hero() {
-  const t = useTranslations("hero");
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -24,7 +21,7 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            {t("title")}
+            Rushaad Mistry
           </motion.h1>
           
           <motion.p
@@ -33,7 +30,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            {t("subtitle")}
+            Cognitive Science Researcher & Product Strategist
           </motion.p>
           
           <motion.p
@@ -42,7 +39,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            {t("description")}
+            Bridging behavioral sciences and product thinking to translate human data into insights for innovation.
           </motion.p>
 
           <motion.div
@@ -65,4 +62,3 @@ export function Hero() {
     </section>
   );
 }
-

@@ -186,7 +186,7 @@ export function ExperienceSection() {
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden relative max-w-3xl mx-auto"
+                  className="mt-6 border-2 border-white/20 dark:border-black/20 overflow-hidden relative max-w-2xl mx-auto"
                 >
                   <div className="relative w-full aspect-[3/4]">
                     <Image

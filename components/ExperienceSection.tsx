@@ -23,6 +23,27 @@ export function ExperienceSection() {
       description: "Direct operational strategy for UC Berkeley's student-run Media Center, serving 1000+ users/semester. Analyze usage and workflow data (Excel and Tableau) to optimize resource allocation and service capacity. Oversee marketing, analytics, and finance teams to deliver 4-6 community events per semester. Designed tracking systems for inventory, incident reports, and staffing, improving service reliability.",
     },
     {
+      title: "Marketing Staff",
+      org: "ASUC SUPERB Productions, UC Berkeley",
+      location: "Berkeley, CA",
+      period: "01/2024 – Present",
+      description: "Design marketing initiatives for SUPERB social media accounts, including our 10K Instagram followers. Collaborate with the marketing team to manage a $10,000+ budget, planning events in line with student culture. Planned, launched, and facilitated communication for ticket giveaways for large artists, such as Dorian Electra. Gained confident working proficiency with Google Suite applications.",
+    },
+    {
+      title: "Marketing Lead & Editorial/Technical Staff",
+      org: "GAG! Magazine, UC Berkeley",
+      location: "Berkeley, CA",
+      period: "09/2023 – Present",
+      description: "Created content such as poetry, reviews, and op-ed pieces for independent student-funded art magazine. Manages a 10+ person team to lead social media marketing campaigns while maintaining a trendy brand voice. Planned large and small scale events for the local Berkeley community and broader Bay Area. Managed a six-person team to build and operations for our custom website (gagmagazine.cargo.site). Attended weekly editorial staff meetings and general meetings to track progress and brainstorm creative magazine ideas.",
+    },
+    {
+      title: "Music Journalism Editorial Staff",
+      org: "The Berkeley B-Side, UC Berkeley",
+      location: "Berkeley, CA",
+      period: "09/2023 – Present",
+      description: "Published music journalism and PR pieces focused on curating a diverse pool of BIPOC and LGBTQ+ voices in music, such as 'The chaos of catharsis: Doom Loop Festival, starring Yeule.' Attended weekly editorial staff meetings to brainstorm articles and discuss the latest trends in music.",
+    },
+    {
       title: "Research Assistant",
       org: "Memory Laboratory, UC Santa Cruz",
       location: "Santa Cruz, CA",

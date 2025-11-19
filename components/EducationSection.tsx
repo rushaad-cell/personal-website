@@ -77,7 +77,7 @@ export function EducationSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="pt-12 border-t border-white/10 dark:border-black/10"
+            className="pt-12 border-t border-white/10 dark:border-black/10 mb-12"
           >
             <div className="flex items-center gap-3 mb-4">
               <Award className="w-5 h-5 text-black dark:text-white" />
@@ -88,6 +88,56 @@ export function EducationSection() {
             <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed font-light">
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
+          </motion.div>
+
+          {/* Relevant Coursework */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="pt-12 border-t border-white/10 dark:border-black/10"
+          >
+            <h3 className="text-2xl font-black text-black dark:text-white uppercase tracking-tight mb-6">
+              Relevant Coursework
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { code: "COGSCI 132", title: "Rhythms of the Brain: from Neuronal Communication to Function", grade: "A+" },
+                { code: "PSYCH C127", title: "Cognitive Neuroscience", grade: "A" },
+                { code: "PHILOS 12A", title: "Introduction to Logic", grade: "A" },
+                { code: "MCELLBI C61", title: "Brain, Mind, and Behavior", grade: "A-" },
+                { code: "LINGUIS 100", title: "Introduction to Linguistic Science", grade: "A-" },
+                { code: "DATA C88C", title: "Computational Structures in Data Science", grade: "A-" },
+                { code: "COGSCI C126", title: "Perception", grade: "B+" },
+                { code: "COGSCI 1", title: "Introduction to Cognitive Science", grade: "B+" },
+                { code: "DATA C8", title: "Foundations of Data Science", grade: "B+" },
+                { code: "MATH 55", title: "Discrete Mathematics", grade: "B" },
+                { code: "UGBA 192T", title: "Topics in Responsible Business", grade: "A" },
+                { code: "STAT 133", title: "Concepts in Computing with Data", grade: "In Progress" },
+                { code: "PSYCH 101", title: "Research and Data Analysis in Psychology", grade: "In Progress" },
+                { code: "GEOG C188", title: "Geographic Information Science", grade: "In Progress" },
+              ].map((course, i) => (
+                <motion.div
+                  key={course.code}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + i * 0.05 }}
+                  className="p-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">
+                      {course.code}
+                    </span>
+                    <span className="text-xs text-black/50 dark:text-white/50 uppercase tracking-widest">
+                      {course.grade}
+                    </span>
+                  </div>
+                  <p className="text-sm text-black/70 dark:text-white/70 font-light leading-relaxed">
+                    {course.title}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       </div>

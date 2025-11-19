@@ -65,33 +65,16 @@ export function EyeTrackingSection() {
           >
             <motion.div
               whileHover={{ scale: 1.01 }}
-              className="bg-black dark:bg-white border-2 border-black/20 dark:border-white/20 p-8 relative overflow-hidden"
+              className="bg-black dark:bg-white border-2 border-black/20 dark:border-white/20 relative overflow-hidden"
             >
-              {/* Embed placeholder - replace with actual eye-tracking visualization embed */}
-              <div className="aspect-video bg-black/10 dark:bg-white/10 flex items-center justify-center relative">
-                <iframe
-                  src="https://observablehq.com/embed/@d3/eye-tracking-heatmap?cell=*"
-                  width="100%"
-                  height="100%"
-                  style={{ border: "none" }}
-                  title="Eye-tracking visualization"
-                  className="w-full h-full"
-                />
-                {/* Fallback if embed doesn't load */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="text-center p-8 opacity-0 hover:opacity-100 transition-opacity">
-                    <p className="text-xs text-white/30 dark:text-black/30 uppercase tracking-widest mb-2 font-light">
-                      Eye-Tracking Data Visualization
-                    </p>
-                    <p className="text-sm text-white/50 dark:text-black/50 font-light">
-                      Replace with your actual eye-tracking embed
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 text-center">
+              <img
+                src="/images/eye-tracking.jpg"
+                alt="Eye-tracking visualization"
+                className="w-full h-auto"
+              />
+              <div className="p-6 bg-black dark:bg-white text-center">
                 <p className="font-black text-white dark:text-black mb-2 text-sm uppercase tracking-widest">
-                  Interactive Visualization
+                  Eye-Tracking Data Visualization
                 </p>
                 <p className="text-xs text-white/50 dark:text-black/50 font-light">
                   Gaze path, fixations, and heatmap

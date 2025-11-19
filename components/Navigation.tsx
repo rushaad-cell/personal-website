@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "@/lib/theme-provider";
-import { Moon, Sun, Menu, X, Home, User, Briefcase, Code, Mail, Sparkles } from "lucide-react";
+import { Moon, Sun, Menu, X, Home, User, Briefcase, Code, Mail, Sparkles, GraduationCap, Palette } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -42,6 +42,8 @@ export function Navigation() {
     { href: "/about", label: "About", icon: User },
     { href: "/projects", label: "Projects", icon: Sparkles },
     { href: "/work", label: "Work", icon: Briefcase },
+    { href: "/education", label: "Education", icon: GraduationCap },
+    { href: "/creative", label: "Creative", icon: Palette },
     { href: "/skills", label: "Skills", icon: Code },
     { href: "/contact", label: "Contact", icon: Mail },
   ];

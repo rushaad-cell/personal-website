@@ -24,7 +24,7 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section className="min-h-screen py-32 bg-black dark:bg-white relative overflow-hidden">
+    <section className="min-h-screen pt-40 pb-32 bg-black dark:bg-white relative overflow-hidden">
       {/* Minimal Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{

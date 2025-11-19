@@ -5,7 +5,7 @@ import { Award } from "lucide-react";
 
 export function EducationSection() {
   return (
-    <section className="min-h-screen pt-32 pb-24 bg-black dark:bg-white relative">
+    <section className="min-h-screen pt-32 pb-24 bg-black relative">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
         {/* Minimal Header */}
@@ -15,13 +15,13 @@ export function EducationSection() {
           className="mb-20 text-center w-full"
         >
           <div className="flex items-baseline justify-center gap-6 mb-4">
-            <div className="flex-1 h-px bg-white/10 dark:bg-black/10"></div>
-            <h1 className="text-7xl md:text-9xl font-black text-white dark:text-black leading-none tracking-tight">
+            <div className="flex-1 h-px bg-white/10"></div>
+            <h1 className="text-7xl md:text-9xl font-black text-white leading-none tracking-tight">
               EDUCATION
             </h1>
-            <div className="flex-1 h-px bg-white/10 dark:bg-black/10"></div>
+            <div className="flex-1 h-px bg-white/10"></div>
           </div>
-          <p className="text-sm text-white/40 dark:text-black/40 uppercase tracking-widest font-light">
+          <p className="text-sm text-white/40 uppercase tracking-widest font-light">
             Academic Background
           </p>
         </motion.div>
@@ -32,16 +32,16 @@ export function EducationSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="bg-white dark:bg-black border-2 border-white/20 dark:border-black/20 p-12 md:p-16 relative w-full"
+          className="bg-white border-2 border-white/20 p-12 md:p-16 relative w-full"
         >
           <div className="mb-12 text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-black mb-4 leading-tight">
               B.A in Cognitive Science
             </h2>
-            <p className="text-2xl text-black/70 dark:text-white/70 font-light mb-4">
+            <p className="text-2xl text-black/70 font-light mb-4">
               University of California, Berkeley
             </p>
-            <div className="flex items-center justify-center gap-4 text-black/50 dark:text-white/50 text-sm uppercase tracking-widest mb-8">
+            <div className="flex items-center justify-center gap-4 text-black/50 text-sm uppercase tracking-widest mb-8">
               <span>Berkeley, CA</span>
               <span>•</span>
               <span>2023-2027</span>
@@ -56,7 +56,7 @@ export function EducationSection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05, type: "spring" }}
                   whileHover={{ scale: 1.05 }}
-                  className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-xs font-medium uppercase tracking-widest border-2 border-black dark:border-white"
+                  className="px-6 py-2 bg-black text-white text-xs font-medium uppercase tracking-widest border-2 border-black"
                 >
                   {minor}
                 </motion.span>
@@ -78,7 +78,7 @@ export function EducationSection() {
                 Specializations
               </h3>
             </div>
-            <p className="text-lg text-black/60 leading-relaxed font-light" style={{ maxWidth: '42rem', textAlign: 'center', margin: '0 auto' }}>
+            <p className="text-lg text-black/60 leading-relaxed font-light" style={{ maxWidth: '42rem', textAlign: 'center', margin: '0 auto', color: '#000000' }}>
               Specializing in product research and data-driven strategy. Experienced in experimental design, data analysis, and project management across academic and technical environments.
             </p>
           </motion.div>
@@ -116,15 +116,15 @@ export function EducationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.05 }}
-                  className="p-4 border border-black/20 text-center"
+                  className="p-4 border border-black/20 bg-white text-center"
                   style={{ width: '100%', maxWidth: '20rem', margin: '0 auto' }}
                 >
                   <div className="mb-2">
-                    <span className="text-sm font-black text-black dark:text-white uppercase tracking-tight">
+                    <span className="text-sm font-black text-black uppercase tracking-tight">
                       {course.code}
                     </span>
                   </div>
-                  <p className="text-sm text-black/70 dark:text-white/70 font-light leading-relaxed">
+                  <p className="text-sm text-black/70 font-light leading-relaxed">
                     {course.title}
                   </p>
                 </motion.div>

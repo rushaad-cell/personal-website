@@ -51,17 +51,17 @@ export function Navigation() {
         )}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-12">
             {/* Logo */}
                     <Link
                       href="/"
-                      className="text-lg font-black text-black uppercase tracking-tight"
+                      className="text-base font-black text-black uppercase tracking-tight"
                     >
                       RM
                     </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navItems.map((item, index) => {
                 const Icon = item.icon;
                 const active = isActive(item.href);
@@ -70,7 +70,7 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                              "px-2 py-2 text-xs font-medium uppercase tracking-widest transition-colors relative",
+                              "px-2 py-1 text-xs font-medium uppercase tracking-widest transition-colors relative",
                               active
                                 ? "text-black"
                                 : "text-black/50 hover:text-black"
